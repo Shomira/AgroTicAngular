@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormMonitPlantaComponent } from './form-monit-planta.component';
+import { MonitoreoGeneralComponent } from './monitoreo-general.component';
 
-describe('FormMonitPlantaComponent', () => {
-  let component: FormMonitPlantaComponent;
-  let fixture: ComponentFixture<FormMonitPlantaComponent>;
+describe('MonitoreoGeneralComponent', () => {
+  let component: MonitoreoGeneralComponent;
+  let fixture: ComponentFixture<MonitoreoGeneralComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormMonitPlantaComponent ]
+      declarations: [ MonitoreoGeneralComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FormMonitPlantaComponent);
+    fixture = TestBed.createComponent(MonitoreoGeneralComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

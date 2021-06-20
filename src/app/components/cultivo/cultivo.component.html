@@ -5,34 +5,168 @@
             <button class="btn btn-primary float-right" routerLink="/registro-cultivo">Agregar</button>
             <table class="table table-striped mt-4">
                 <thead>
-                  <tr>
-                    <th>Cultivo</th>
-                    <th>Nombre Común</th>
-                    <th>Nombre Científico</th>
-                    <th>Ver</th>
-                    <th></th>
-                    <th></th>
-                  </tr>
+                    <tr>
+                        <th>Cultivo</th>
+                        <th>Nombre Común</th>
+                        <th>Nombre Científico</th>
+                        <th>Variedades</th>
+                        <th>Plagas y Enfermedades</th>
+                        <th>Ver</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td><i class="fas fa-edit fa-lg text-info"></i></td>
-                    <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td><i class="fas fa-edit fa-lg text-info"></i></td>
-                    <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
-                  </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td><button class="btn btn-secondary" data-toggle="modal" data-target="#modalVariedades">Variedades</button></td>
+                        <td><button class="btn btn-secondary" data-toggle="modal" data-target="#modalPlagasEnfermedades">Plagas y Enfermedades</button></td>
+                        <td><button class="btn btn-secondary">Ver</button></td>
+                        <td><i class="fas fa-edit fa-lg text-info"></i></td>
+                        <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td><button class="btn btn-secondary" data-toggle="modal" data-target="#modalVariedades">Variedades</button></td>
+                        <td><button class="btn btn-secondary" data-toggle="modal" data-target="#modalPlagasEnfermedades">Plagas y Enfermedades</button></td>
+                        <td><button class="btn btn-secondary">Ver</button></td>
+                        <td><i class="fas fa-edit fa-lg text-info"></i></td>
+                        <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
+                    </tr>
                 </tbody>
             </table>
         </section>
     </section>
 </section>
+<!-- Modal Variedades-->
+<div class="modal fade" id="modalVariedades" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div  class="modal-header modalHeader">
+                <h5 class="modal-title"  id="exampleModalLabel">Variedades</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-primary mt-3 mr-3 float-right" data-toggle="modal" data-target="#modalAgregarVariedad">Agregar</button>
+            </div>
+            <table class="table table-striped mt-4">
+                <thead>
+                    <tr>
+                        <th>Variedad</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Variedad 1</td>
+                        <td><i class="fas fa-edit fa-lg text-info"></i></td>
+                        <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Variedad 2</td>
+                        <td><i class="fas fa-edit fa-lg text-info"></i></td>
+                        <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Modal Crear Variedad-->
+<div class="modal fade" id="modalAgregarVariedad" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div  class="modal-header modalHeader">
+                <h5 class="modal-title"  id="exampleModalLabel">Nueva Variedad</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="" method="POST">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre"  required autocomplete="name" autofocus>
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary ml-3">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Modal Plagas y enfermedades-->
+<div class="modal fade" id="modalPlagasEnfermedades" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div  class="modal-header modalHeader">
+                <h5 class="modal-title"  id="exampleModalLabel">Plagas y Enfermedades</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-primary mt-3 mr-3 float-right" data-toggle="modal" data-target="#modalAgregarPlagaEnfermedad">Agregar</button>
+            </div>
+            <table class="table table-striped mt-4">
+                <thead>
+                    <tr>
+                        <th>Plaga y Enfermedad</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Plaga 1</td>
+                        <td><i class="fas fa-edit fa-lg text-info"></i></td>
+                        <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Enfermedad 2</td>
+                        <td><i class="fas fa-edit fa-lg text-info"></i></td>
+                        <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Modal Crear Plaga y enfermedad-->
+<div class="modal fade" id="modalAgregarPlagaEnfermedad" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div  class="modal-header modalHeader">
+                <h5 class="modal-title"  id="exampleModalLabel">Nueva Plaga y Enfermedad</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="" method="POST">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Plaga y Enfermedad</label>
+                        <select name="plaga_enfermedad" id="plaga_enfermedad" class="form-control">
+                            <option value="" disable >Elegir Plaga y enfermedad</option>
+                            <option value="">Plaga 1</option>
+                            <option value="">Plaga 2</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary ml-3">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

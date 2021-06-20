@@ -1,10 +1,11 @@
 <section style="background-color:#e9eae8;">
     <section class="container pt-4" >
+        <h2 class="text-center">Nuevo Cultivo</h2>
         <section class="card">
             <section class="card-body" >
                 <form>
                     <fieldset>
-                        <legend>Nuevo Cultivo</legend>
+                        <legend>Datos Generales</legend>
                         <div class="row">
                             <div class="mb-3 col-4">
                                 <label for="nombre" class="form-label">Nombre</label>
@@ -30,25 +31,21 @@
                                 <label for="labores_cultivo" class="form-label">Labores del cultivo</label>
                                 <input type="text" id="labores_cultivo" class="form-control w-75" placeholder="Labores del cultivo">
                             </div>
-                            <div class="mb-3 col-4">
-                                <label for="buena_asociacion" class="form-label">Buena asociación</label>
-                                <input type="text" id="buena_asociacion" class="form-control w-75" placeholder="Buena asociación">
-                            </div>
-                            <div class="mb-3 col-4">
-                                <label for="mala_asociacion" class="form-label">Mala asociación</label>
-                                <input type="text" id="mala_asociacion" class="form-control w-75" placeholder="Mala asociación">
-                            </div>
-                            <div class="mb-3 col-4">
-                                <label for="riego" class="form-label">Riego</label>
-                                <input type="text" id="riego" class="form-control w-75" placeholder="Riego">
-                            </div>
-                            <div class="mb-3 col-4">
+                            <div class="mb-3 col-6">
                                 <label for="abonamiento" class="form-label">Abonamiento</label>
-                                <input type="text" id="abonamiento" class="form-control w-75" placeholder="Abonamiento">
+                                <input type="text" id="abonamiento" class="form-control" placeholder="Abonamiento">
                             </div>
-                            <div class="mb-3 col-4">
+                            <div class="mb-3 col-6">
                                 <label for="fertilizacion" class="form-label">Fertilización</label>
-                                <input type="text" id="fertilizacion" class="form-control w-75" placeholder="Fertilización">
+                                <input type="text" id="fertilizacion" class="form-control" placeholder="Fertilización">
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="buena_asociacion" class="form-label">Buena asociación</label>
+                                <input type="text" id="buena_asociacion" class="form-control" placeholder="Buena asociación">
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="mala_asociacion" class="form-label">Mala asociación</label>
+                                <input type="text" id="mala_asociacion" class="form-control" placeholder="Mala asociación">
                             </div>
                             <div class="mb-3 col-6">
                                 <label for="control_malas_hierbas" class="form-label">Control de malas hierbas</label>
@@ -58,31 +55,43 @@
                                 <label for="uso_aplicacion" class="form-label">Uso y apliación</label>
                                 <input type="text" id="uso_aplicacion" class="form-control" textArea="200" placeholder="Uso y apliación">
                             </div>
+                            <div class="mb-3 col-12">
+                                <label for="riego" class="form-label">Riego</label>
+                                <input type="text" id="riego" class="form-control" placeholder="Riego">
+                            </div>
                         </div>
                     </fieldset>
                     <hr>
                     <fieldset>
                         <legend>Taxonomía</legend>
                         <div class="row">
-                            <div class="mb-3 col-6">
+                            <div class="mb-3 col-4">
                                 <label for="nombre_comun" class="form-label">Nombre común</label>
-                                <input type="text" id="nombre_comun" class="form-control" placeholder="Nombre común">
+                                <input type="text" id="nombre_comun" class="form-control w-75" placeholder="Nombre común">
                             </div>
-                            <div class="mb-3 col-6">
+                            <div class="mb-3 col-4">
                                 <label for="familia" class="form-label">Familia</label>
-                                <input type="text" id="familia" class="form-control" placeholder="Familia">
+                                <select name="familia" id="familia" class="form-control w-75">
+                                    <option value="" disable >Elegir familia</option>
+                                    <option value="">Familia 1</option>
+                                    <option value="">Familia 2</option>
+                                </select>
                             </div>
-                            <div class="mb-3 col-6">
+                            <div class="mb-3 col-4">
                                 <label for="genero" class="form-label">Género</label>
-                                <input type="text" id="genero" class="form-control" placeholder="Género">
+                                <select name="genero" id="genero" class="form-control w-75">
+                                    <option value="" disable >Elegir Género</option>
+                                    <option value="">Género 1</option>
+                                    <option value="">Género 2</option>
+                                </select>
                             </div>
-                            <div class="mb-3 col-6">
+                            <div class="mb-3 col-4">
                                 <label for="especie" class="form-label">Especie</label>
-                                <input type="text" id="especie" class="form-control" placeholder="Especie">
+                                <input type="text" id="especie" class="form-control w-75" placeholder="Especie">
                             </div>
-                            <div class="mb-3 col-6">
+                            <div class="mb-3 col-4">
                                 <label for="nombre_cientifico" class="form-label">Nombre científico</label>
-                                <input type="text" id="nombre_cientifico" class="form-control" placeholder="Nombre científico">
+                                <input type="text" id="nombre_cientifico" class="form-control w-75" placeholder="Nombre científico">
                             </div>
                         </div>
                     </fieldset>
@@ -118,11 +127,11 @@
                         <div class="row">
                             <div class="mb-3 col-3">
                                 <label for="altura" class="form-label">Altura</label>
-                                <input type="number" id="altura" class="form-control" placeholder="Altura">
+                                <input type="number" id="altura" class="form-control w-75" placeholder="Altura">
                             </div>
                             <div class="mb-3 col-3">
                                 <label for="diametro" class="form-label">Diametro</label>
-                                <input type="number" id="diametro" class="form-control" placeholder="Diametro">
+                                <input type="number" id="diametro" class="form-control w-75" placeholder="Diametro">
                             </div>
                         </div>
                     </fieldset>
@@ -130,29 +139,33 @@
                     <fieldset>
                         <legend>Temperatura</legend>
                         <div class="row">
-                            <div class="mb-3 col-2">
+                            <div class="mb-3 col-3">
                                 <label for="optima_maxima" class="form-label">Óptima máxima</label>
-                                <input type="number" id="optima_maxima" class="form-control" placeholder="Óptima máxima">
+                                <input type="number" id="optima_maxima" class="form-control w-75" placeholder="Óptima máxima">
                             </div>
-                            <div class="mb-3 col-2">
+                            <div class="mb-3 col-3">
                                 <label for="optima_minima" class="form-label">Óptima mínima</label>
-                                <input type="text" id="optima_minima" class="form-control" placeholder="Óptima mínima">
-                            </div>
-                            <div class="mb-3 col-2">
-                                <label for="germinacion_maxima" class="form-label">Germinación máxima</label>
-                                <input type="number" id="germinacion_maxima" class="form-control" placeholder="Germinación máxima">
-                            </div>
-                            <div class="mb-3 col-2">
-                                <label for="germinacion_minima" class="form-label">Germinación mínima</label>
-                                <input type="number" id="germinacion_minima" class="form-control" placeholder="Germinación mínima">
+                                <input type="text" id="optima_minima" class="form-control w-75" placeholder="Óptima mínima">
                             </div>
                             <div class="mb-3 col-3">
                                 <label for="germinacion_crecimiento" class="form-label">Mínima de crecimiento</label>
-                                <input type="number" id="germinacion_crecimiento" class="form-control" placeholder="Mínima de crecimiento">
+                                <input type="number" id="germinacion_crecimiento" class="form-control w-75" placeholder="Mínima de crecimiento">
+                            </div>
+                            <div class="mb-3 col-3">
+                            </div>
+                            <div class="mb-3 col-3">
+                                <label for="germinacion_maxima" class="form-label">Germinación máxima</label>
+                                <input type="number" id="germinacion_maxima" class="form-control w-75" placeholder="Germinación máxima">
+                            </div>
+                            <div class="mb-3 col-3">
+                                <label for="germinacion_minima" class="form-label">Germinación mínima</label>
+                                <input type="number" id="germinacion_minima" class="form-control w-75" placeholder="Germinación mínima">
+                            </div>
+                            <div class="mb-3 col-3">
                             </div>
                             <div class="mb-3 col-6">
                                 <label for="observaciones_temp" class="form-label">Observaciones</label>
-                                <input type="text" id="observaciones_temp" class="form-control" placeholder="Observaciones">
+                                <textarea name="observaciones_temp" id="observaciones_temp" class="form-control" rows="3" cols="20" placeholder="Observaciones"></textarea>
                             </div>
                         </div>
                     </fieldset>
@@ -162,15 +175,17 @@
                         <div class="row">
                             <div class="mb-3 col-3">
                                 <label for="humedad_maxima" class="form-label">Máxima</label>
-                                <input type="number" id="humedad_maxima" class="form-control" placeholder="Máxima">
+                                <input type="number" id="humedad_maxima" class="form-control w-75" placeholder="Máxima">
                             </div>
                             <div class="mb-3 col-3">
                                 <label for="humedad_minima" class="form-label">Mínima</label>
-                                <input type="number" id="humedad_minima" class="form-control" placeholder="Mínima">
+                                <input type="number" id="humedad_minima" class="form-control w-75" placeholder="Mínima">
+                            </div>
+                            <div class="mb-3 col-3">
                             </div>
                             <div class="mb-3 col-6">
                                 <label for="observaciones_humedad" class="form-label">Observaciones</label>
-                                <input type="text" id="observaciones_humedad" class="form-control" placeholder="Observaciones">
+                                <textarea name="observaciones_humedad" id="observaciones_humedad" class="form-control" rows="3" cols="20" placeholder="Observaciones"></textarea>
                             </div>
                         </div>
                     </fieldset>
@@ -180,19 +195,19 @@
                         <div class="row">
                             <div class="mb-3 col-3">
                                 <label for="densidad_siembra_max" class="form-label">Densidad máxima de siembra</label>
-                                <input type="number" id="densidad_siembra_max" class="form-control" placeholder="Densidad máxima de siembra">
+                                <input type="number" id="densidad_siembra_max" class="form-control w-75" placeholder="Densidad máxima de siembra">
                             </div>
                             <div class="mb-3 col-3">
                                 <label for="densidad_siembra_min" class="form-label">Densidad mínima de siembra</label>
-                                <input type="number" id="densidad_siembra_min" class="form-control" placeholder="Densidad mínima de siembra">
+                                <input type="number" id="densidad_siembra_min" class="form-control w-75" placeholder="Densidad mínima de siembra">
                             </div>
                             <div class="mb-3 col-3">
                                 <label for="distancia_surcos" class="form-label">Distancia entre surcos</label>
-                                <input type="number" id="distancia_surcos" class="form-control" placeholder="Distancia entre surcos">
+                                <input type="number" id="distancia_surcos" class="form-control w-75" placeholder="Distancia entre surcos">
                             </div>
                             <div class="mb-3 col-3">
                                 <label for="distancia_plantas" class="form-label">Distancia entre plantas</label>
-                                <input type="number" id="distancia_plantas" class="form-control" placeholder="Distancia entre plantas">
+                                <input type="number" id="distancia_plantas" class="form-control w-75" placeholder="Distancia entre plantas">
                             </div>
                             <div class="mb-3 col-6">
                                 <label for="proceso_pantacion" class="form-label">Proceso</label>
@@ -204,7 +219,7 @@
                     <fieldset>
                         <legend>Preparación del Terreno</legend>
                         <div class="row">
-                            <div class="mb-3 col-6">
+                            <div class="mb-3 col-9">
                                 <label for="proceso_terreno" class="form-label">Proceso</label>
                                 <input type="text" id="proceso_terreno" class="form-control" placeholder="Proceso">
                             </div>
@@ -214,7 +229,7 @@
                             </div>
                             <div class="mb-3 col-6">
                                 <label for="observaciones_terreno" class="form-label">Observaciones</label>
-                                <input type="text" id="observaciones_terreno" class="form-control" placeholder="Observaciones">
+                                <textarea name="observaciones_terreno" id="observaciones_terreno" class="form-control" rows="3" cols="20" placeholder="Observaciones"></textarea>
                             </div>
                         </div>
                     </fieldset>
@@ -222,25 +237,25 @@
                     <fieldset>
                         <legend>Valor Nutricional</legend>
                         <div class="row">
-                            <div class="mb-3 col-2">
+                            <div class="mb-3 col-3">
                                 <label for="carbohidratos" class="form-label">Carbohidratos(gramos)</label>
-                                <input type="number" id="carbohidratos" class="form-control" placeholder="Carbohidratos">
+                                <input type="number" id="carbohidratos" class="form-control w-75" placeholder="Carbohidratos">
                             </div>
-                            <div class="mb-3 col-2">
+                            <div class="mb-3 col-3">
                                 <label for="proteinas" class="form-label">Proteinas(gramos)</label>
-                                <input type="number" id="proteinas" class="form-control" placeholder="Proteinas">
+                                <input type="number" id="proteinas" class="form-control w-75" placeholder="Proteinas">
                             </div>
-                            <div class="mb-3 col-2">
+                            <div class="mb-3 col-3">
                                 <label for="grasas" class="form-label">Grasas(gramos)</label>
-                                <input type="number" id="grasas" class="form-control" placeholder="Grasas">
+                                <input type="number" id="grasas" class="form-control w-75" placeholder="Grasas">
                             </div>
-                            <div class="mb-3 col-2">
+                            <div class="mb-3 col-3">
                                 <label for="calorias" class="form-label">Calorias(cal)</label>
-                                <input type="number" id="calorias" class="form-control" placeholder="Calorias">
+                                <input type="number" id="calorias" class="form-control w-75" placeholder="Calorias">
                             </div>
                             <div class="mb-3 col-6">
-                                <label for="observaciones_terreno" class="form-label">Observaciones</label>
-                                <input type="text" id="observaciones_terreno" class="form-control" placeholder="Observaciones">
+                                <label for="observaciones_nutricional" class="form-label">Observaciones</label>
+                                <textarea name="observaciones_nutricional" id="observaciones_nutricional" class="form-control" rows="3" cols="20" placeholder="Observaciones"></textarea>
                             </div>
                         </div>
                     </fieldset>
@@ -248,13 +263,13 @@
                     <fieldset>
                         <legend>Producción promedio</legend>
                         <div class="row">
-                            <div class="mb-3 col-2">
+                            <div class="mb-3 col-3">
                                 <label for="maxima_produccion" class="form-label">Máxima</label>
-                                <input type="number" id="maxima_produccion" class="form-control" placeholder="Máxima">
+                                <input type="number" id="maxima_produccion" class="form-control w-75" placeholder="Máxima">
                             </div>
-                            <div class="mb-3 col-2">
+                            <div class="mb-3 col-3">
                                 <label for="minima_produccion" class="form-label">Mínima</label>
-                                <input type="number" id="minima_produccion" class="form-control" placeholder="Mínima">
+                                <input type="number" id="minima_produccion" class="form-control w-75" placeholder="Mínima">
                             </div>
                         </div>
                     </fieldset>
@@ -262,17 +277,19 @@
                     <fieldset>
                         <legend>Almacenamiento</legend>
                         <div class="row">
-                            <div class="mb-3 col-2">
+                            <div class="mb-3 col-3">
                                 <label for="maxima_almacenamiento" class="form-label">Temperatura Máxima</label>
-                                <input type="number" id="maxima_almacenamiento" class="form-control" placeholder="Máxima">
+                                <input type="number" id="maxima_almacenamiento" class="form-control w-75" placeholder="Máxima">
                             </div>
-                            <div class="mb-3 col-2">
+                            <div class="mb-3 col-3">
                                 <label for="minima_almacenamiento" class="form-label">Temperatura Mínima</label>
-                                <input type="number" id="minima_almacenamiento" class="form-control" placeholder="Mínima">
+                                <input type="number" id="minima_almacenamiento" class="form-control w-75" placeholder="Mínima">
+                            </div>
+                            <div class="mb-3 col-3">
                             </div>
                             <div class="mb-3 col-6">
                                 <label for="observaciones_almacenamiento" class="form-label">Observaciones</label>
-                                <input type="text" id="observaciones_almacenamiento" class="form-control" placeholder="Observaciones">
+                                <textarea name="observaciones_almacenamiento" id="observaciones_almacenamiento" class="form-control" rows="3" cols="20" placeholder="Observaciones"></textarea>
                             </div>
                         </div>
                     </fieldset>
@@ -280,17 +297,19 @@
                     <fieldset>
                         <legend>Recolección</legend>
                         <div class="row">
-                            <div class="mb-3 col-2">
+                            <div class="mb-3 col-3">
                                 <label for="desde" class="form-label">Desde(días)</label>
-                                <input type="number" id="desde" class="form-control" placeholder="Desde">
+                                <input type="number" id="desde" class="form-control w-75" placeholder="Desde">
                             </div>
-                            <div class="mb-3 col-2">
+                            <div class="mb-3 col-3">
                                 <label for="hasta" class="form-label">Hasta(días)</label>
-                                <input type="number" id="hasta" class="form-control" placeholder="Hasta">
+                                <input type="number" id="hasta" class="form-control w-75" placeholder="Hasta">
+                            </div>
+                            <div class="mb-3 col-3">
                             </div>
                             <div class="mb-3 col-6">
                                 <label for="observaciones_recoleccion" class="form-label">Observaciones</label>
-                                <input type="text" id="observaciones_recoleccion" class="form-control" placeholder="Observaciones">
+                                <textarea name="observaciones_recoleccion" id="observaciones_recoleccion" class="form-control" rows="3" cols="20" placeholder="Observaciones"></textarea>
                             </div>
                         </div>
                     </fieldset>
@@ -298,13 +317,15 @@
                     <fieldset>
                         <legend>Época de siembra</legend>
                         <div class="row">
-                            <div class="mb-3 col-2">
+                            <div class="mb-3 col-3">
                                 <label for="epoca_principal" class="form-label">Época principal</label>
-                                <input type="text" id="epoca_principal" class="form-control" placeholder="Época principal">
+                                <input type="text" id="epoca_principal" class="form-control w-75" placeholder="Época principal">
+                            </div>
+                            <div class="mb-3 col-6">
                             </div>
                             <div class="mb-3 col-6">
                                 <label for="observaciones_epoca_siembra" class="form-label">Observaciones</label>
-                                <input type="text" id="observaciones_epoca_siembra" class="form-control" placeholder="Observaciones">
+                                <textarea name="observaciones_epoca_siembra" id="observaciones_epoca_siembra" class="form-control" rows="3" cols="20" placeholder="Observaciones"></textarea>
                             </div>
                         </div>
                     </fieldset>
@@ -312,17 +333,20 @@
                     <fieldset>
                         <legend>Suelo</legend>
                         <div class="row">
-                            <div class="mb-3 col-2">
+                            <div class="mb-3 col-3">
                                 <label for="maximo_ph" class="form-label">PH Máximo</label>
-                                <input type="number" id="maximo_ph" class="form-control" placeholder="Máximo">
+                                <input type="number" id="maximo_ph" class="form-control w-75" placeholder="Máximo">
                             </div>
-                            <div class="mb-3 col-2">
+                            <div class="mb-3 col-3">
                                 <label for="minima_ph" class="form-label">PH Mínimo</label>
-                                <input type="number" id="minima_ph" class="form-control" placeholder="Mínimo">
+                                <input type="number" id="minima_ph" class="form-control w-75" placeholder="Mínimo">
+                            </div>
+                            
+                            <div class="mb-3 col-3">
                             </div>
                             <div class="mb-3 col-6">
                                 <label for="observaciones_suelo" class="form-label">Observaciones</label>
-                                <input type="text" id="observaciones_suelo" class="form-control" placeholder="Observaciones">
+                                <textarea name="observaciones_suelo" id="observaciones_suelo" class="form-control" rows="3" cols="20" placeholder="Observaciones"></textarea>
                             </div>
                         </div>
                     </fieldset>
@@ -334,30 +358,34 @@
                                 <label for="material" class="form-label">Material</label>
                                 <input type="text" id="material" class="form-control w-50" placeholder="Material">
                             </div>
-                            <div class="mb-3 col-4">
+                            <div class="mb-3 col-3">
                                 <label for="dias_transplante" class="form-label">Días para transplante</label>
-                                <input type="number" id="dias_transplante" class="form-control" placeholder="Días para transplante">
+                                <input type="number" id="dias_transplante" class="form-control w-75" placeholder="Días para transplante">
                             </div>
-                            <div class="mb-3 col-4">
+                            <div class="mb-3 col-3">
                                 <label for="maximo_semillas" class="form-label">Semillas Máximas(kg/ha)</label>
-                                <input type="number" id="maximo_semillas" class="form-control" placeholder="Máximo">
+                                <input type="number" id="maximo_semillas" class="form-control w-75" placeholder="Máximo">
                             </div>
-                            <div class="mb-3 col-4">
+                            <div class="mb-3 col-3">
                                 <label for="minimo_semillas" class="form-label">Semillas Mínimas(kg/ha)</label>
-                                <input type="number" id="minimo_semillas" class="form-control" placeholder="Mínimo">
+                                <input type="number" id="minimo_semillas" class="form-control w-75" placeholder="Mínimo">
                             </div>
                             <div class="mb-3 col-6">
                                 <label for="recomendaciones_semillero" class="form-label">Recomendaciones</label>
-                                <input type="text" id="recomendaciones_semillero" class="form-control" placeholder="Recomendaciones">
+                                <textarea name="recomendaciones_semillero" id="recomendaciones_semillero" class="form-control" rows="3" cols="20" placeholder="Recomendaciones"></textarea>
                             </div>
                             <div class="mb-3 col-6">
                                 <label for="observaciones_semillero" class="form-label">Observaciones</label>
-                                <input type="text" id="observaciones_semillero" class="form-control" placeholder="Observaciones">
+                                <textarea name="observaciones_semillero" id="observaciones_semillero" class="form-control" rows="3" cols="20" placeholder="Observaciones"></textarea>
                             </div>
                         </div>
                     </fieldset>
-    
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <br>
+                    <div class="mb-3 col-6">
+                        <button type="button" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-danger ml-5">Cancelar</button>
+                    </div>
+                    
                     
                 </form>
             </section>

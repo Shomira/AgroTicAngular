@@ -1,71 +1,71 @@
 <section class="container pt-4">
     <section class="card">
-      <section class="card-body">
-        <span class="h3">Listado de Plantas</span>
-        <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modalPlanta">Agregar Planta</button>
-        <table class="table table-striped mt-4">
-            <thead>
-              <tr>
-                <th>Planta</th>
-                <th>Variedad</th>
-                <th>Cultivo</th>
-                <th>Fecha Siembra</th>
-                <th>Ver</th>
-                <th>Editar</th>
-                <th>Eliminar</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>......</td>
-                <td>......</td>
-                <td>......</td>
-                <td>------</td>
-                <td><i class="fas fa-eye fa-lg text-info"></i></td>
-                <td><i class="fas fa-edit fa-lg text-info"></i></td>
-                <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
-              </tr>
-              <tr>
-                <td>......</td>
-                <td>......</td>
-                <td>......</td>
-                <td>-------</td>
-                <td><i class="fas fa-eye fa-lg text-info"></i></td>
-                <td><i class="fas fa-edit fa-lg text-info"></i></td>
-                <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
-              </tr>
-            </tbody>
-        </table>
-      </section>
+        <section class="card-body">
+            <span class="h3">Listado de Plantas</span>
+            <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modalPlanta">Agregar Planta</button>
+            <table class="table table-striped mt-4">
+                <thead>
+                    <tr>
+                        <th>Planta</th>
+                        <th>Variedad</th>
+                        <th>Cultivo</th>
+                        <th>Fecha Siembra</th>
+                        <th>Ver</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>......</td>
+                        <td>......</td>
+                        <td>......</td>
+                        <td>------</td>
+                        <td><i class="fas fa-eye fa-lg text-info"></i></td>
+                        <td><i class="fas fa-edit fa-lg text-info"></i></td>
+                        <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
+                    </tr>
+                    <tr>
+                        <td>......</td>
+                        <td>......</td>
+                        <td>......</td>
+                        <td>-------</td>
+                        <td><i class="fas fa-eye fa-lg text-info"></i></td>
+                        <td><i class="fas fa-edit fa-lg text-info"></i></td>
+                        <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </section>
-     <!--Modal Codigo Planta-->
+    <!--Modal Codigo Planta-->
     <!-- Modal -->
     <div class="modal fade" id="modalPlanta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action=''>
+                    <div class="modal-body">
+                        <label for=""> Nombre</label>
+                        <input  class="form-control " type="text">
+                        <label for=""> Variedad</label>
+                        <input  class="form-control " type="text">
+                        <label for=""> Cultivo</label>
+                        <input  class="form-control " type="text">
+                        <label for=""> fecha Siembra</label>
+                        <input  type= "date" class="form-control " >
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit"  class="btn btn-primary">Aceptar</button>
+                    </div>
+                </form>
             </div>
-            <form action=''>
-              <div class="modal-body">
-                  <label for=""> Nombre</label>
-                  <input  class="form-control " type="text">
-                  <label for=""> Variedad</label>
-                  <input  class="form-control " type="text">
-                  <label for=""> Cultivo</label>
-                  <input  class="form-control " type="text">
-                  <label for=""> fecha Siembra</label>
-                  <input  type= "date" class="form-control " >
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="submit"  class="btn btn-primary">Aceptar</button>
-              </div>
-            </form>
-          </div>
         </div>
-      </div>
+    </div>
 </section>

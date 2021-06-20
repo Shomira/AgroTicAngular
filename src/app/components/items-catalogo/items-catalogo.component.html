@@ -1,0 +1,61 @@
+<section class="container pt-4">
+    <section class="card w-75 items">
+        <section class="card-body">
+            <span class="h3">Listado de Ítems</span>
+            <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modalAgregar">Agregar</button>
+            <table class="table table-striped mt-4">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Código</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mark</td>
+                        <td>XYZ</td>
+                        <td><i class="fas fa-edit fa-lg text-info"></i></td>
+                        <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Jacob</td>
+                        <td>XYZ</td>
+                        <td><i class="fas fa-edit fa-lg text-info"></i></td>
+                        <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+</section>
+<!-- Modal Crear Item de Catálogo-->
+<div class="modal fade" id="modalAgregar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div  class="modal-header modalHeader">
+                <h5 class="modal-title"  id="exampleModalLabel">Nuevo Ítem</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="" method="POST">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre" autofocus>
+                    </div>
+                    <div class="mb-3">
+                        <label for="codigo" class="form-label">Código</label>
+                        <input id="codigo" type="text" class="form-control" name="codigo" placeholder="Código" autofocus>
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary ml-3">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

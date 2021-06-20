@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { RegistrarCultivoComponent } from './components/registrar-cultivo/registrar-cultivo.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { CultivoComponent } from './components/cultivo/cultivo.component';
-import { FormMonitPlantaComponent } from './components/monitoreo-planta/form-monit-planta/form-monit-planta.component';
-import { FormMonitGeneralComponent } from './components/monitoreo-general/form-monit-general/form-monit-general.component';
+import { CatalogoComponent } from './components/catalogo/catalogo.component';
+import { ItemsCatalogoComponent } from './components/items-catalogo/items-catalogo.component';
 import { MonitoreosComponent } from './components/monitoreos/monitoreos.component';
+import { MonitoreoGeneralComponent } from './components/monitoreo-general/monitoreo-general.component';
+import { MonitoreoPlantaComponent } from './components/monitoreo-planta/monitoreo-planta.component';
 import { PlantaComponent } from './components/planta/planta.component';
 import { PlagaEnfermedadComponent } from './components/plaga-enfermedad/plaga-enfermedad.component';
 
@@ -18,11 +20,13 @@ import { PlagaEnfermedadComponent } from './components/plaga-enfermedad/plaga-en
     RegistrarCultivoComponent,
     MenuComponent,
     CultivoComponent,
-    FormMonitPlantaComponent,
-    FormMonitGeneralComponent,
+    CatalogoComponent,
+    ItemsCatalogoComponent,
     MonitoreosComponent,
+    MonitoreoGeneralComponent,
+    MonitoreoPlantaComponent, 
     PlantaComponent,
-    PlagaEnfermedadComponent,
+    PlagaEnfermedadComponent
   ],
   imports: [
     BrowserModule,

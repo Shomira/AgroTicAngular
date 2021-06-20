@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormMonitGeneralComponent } from './form-monit-general.component';
+import { ItemsCatalogoComponent } from './items-catalogo.component';
 
-describe('FormMonitGeneralComponent', () => {
-  let component: FormMonitGeneralComponent;
-  let fixture: ComponentFixture<FormMonitGeneralComponent>;
+describe('ItemsCatalogoComponent', () => {
+  let component: ItemsCatalogoComponent;
+  let fixture: ComponentFixture<ItemsCatalogoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormMonitGeneralComponent ]
+      declarations: [ ItemsCatalogoComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FormMonitGeneralComponent);
+    fixture = TestBed.createComponent(ItemsCatalogoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
