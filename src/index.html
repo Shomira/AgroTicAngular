@@ -14,7 +14,30 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
-<body>
-    <app-root></app-root>
+<body >
+  <button onclick="topFunction()" id="myBtn" title="Go to top"> 
+    <i class="fas fa-angle-up"></i>
+  </button>
+  <app-root></app-root>
+  
 </body>
+
 </html>
+<script>
+    
+  var mybutton = document.getElementById("myBtn");
+  window.onscroll = function() {scrollFunction()};
+  // cuando se mostrara
+  function scrollFunction() {
+    if (document.body.scrollTop > 15 || document.documentElement.scrollTop > 15) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  // regresar al inicio
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>

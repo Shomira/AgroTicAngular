@@ -13,6 +13,9 @@ import { MonitoreoGeneralComponent } from './components/monitoreo-general/monito
 import { MonitoreoPlantaComponent } from './components/monitoreo-planta/monitoreo-planta.component';
 import { PlantaComponent } from './components/planta/planta.component';
 import { PlagaEnfermedadComponent } from './components/plaga-enfermedad/plaga-enfermedad.component';
+import { EditarCultivoComponent } from './components/editar-cultivo/editar-cultivo.component';
+import { ListCultivosComponent } from './components/list-cultivos/list-cultivos.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,11 +29,15 @@ import { PlagaEnfermedadComponent } from './components/plaga-enfermedad/plaga-en
     MonitoreoGeneralComponent,
     MonitoreoPlantaComponent, 
     PlantaComponent,
-    PlagaEnfermedadComponent
+    PlagaEnfermedadComponent,
+    EditarCultivoComponent,
+    ListCultivosComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

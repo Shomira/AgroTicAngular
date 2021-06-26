@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+  /*Flecha Final================================== para todo*/
+  #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 90;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: rgb(68, 64, 64);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  #myBtn:hover {
+    background-color: rgb(77, 38, 53);
+  }

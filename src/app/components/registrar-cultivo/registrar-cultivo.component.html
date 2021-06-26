@@ -1,13 +1,33 @@
 <section style="background-color:#e9eae8;">
     <section class="container pt-4" >
+        <button type="button" class="btn btn-primary">  
+            <a class="aBtnRegresar" href="javascript: history.go(-1)">Regresar</a>
+        </button>
         <h2 class="text-center">Nuevo Cultivo</h2>
+        <br>
         <section class="card">
             <section class="card-body" >
-                <form>
+                <form [formGroup]=crearCultivo (ngSubmit)=agregarCultivo()>
                     <fieldset>
                         <legend>Datos Generales</legend>
                         <div class="row">
                             <div class="mb-3 col-4">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input formControlName="nombreComun" type="text" id="nombre" class="form-control w-75" placeholder="Nombre">
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label for="" class="form-label">Clima</label>
+                                <input formControlName="clima" type="text" id="origen" class="form-control w-75" placeholder="Origen">
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label for="ciclo_vida" class="form-label">Ciclo de vida</label>
+                                <input formControlName="cicloVida" type="text" id="ciclo_vida" class="form-control w-75" placeholder="Ciclo de vida">
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label for="clima" class="form-label">Zona produccion</label>
+                                <input formControlName="zonaProduccion" type="text" id="clima" class="form-control w-75" placeholder="Clima">
+                            </div>
+                            <!--<div class="mb-3 col-4">
                                 <label for="nombre" class="form-label">Nombre</label>
                                 <input type="text" id="nombre" class="form-control w-75" placeholder="Nombre">
                             </div>
@@ -22,7 +42,7 @@
                             <div class="mb-3 col-4">
                                 <label for="clima" class="form-label">Clima</label>
                                 <input type="text" id="clima" class="form-control w-75" placeholder="Clima">
-                            </div>
+                            </div>-->
                             <div class="mb-3 col-4">
                                 <label for="zona_produccion" class="form-label">Zona producción</label>
                                 <input type="text" id="zona_produccion" class="form-control w-75" placeholder="Zona producción">
@@ -382,7 +402,7 @@
                     </fieldset>
                     <br>
                     <div class="mb-3 col-6">
-                        <button type="button" class="btn btn-primary">Guardar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
                         <button type="button" class="btn btn-danger ml-5">Cancelar</button>
                     </div>
                     

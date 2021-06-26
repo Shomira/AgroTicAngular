@@ -6,3 +6,7 @@ input, select{
     background-color: #e9eae8;
     border-radius: 0;
 }
+.aBtnRegresar{
+    text-decoration: none;
+    color: white;
+}

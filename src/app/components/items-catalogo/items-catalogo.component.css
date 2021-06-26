@@ -1,3 +1,11 @@
 section.items{
     margin: 0 auto;
 }
+.aBtnRegresar{
+    text-decoration: none;
+    color: white;
+}
+.btnRegresarItems{
+    margin-left: 8.90em;
+    margin-bottom: 0.5em;
+}

@@ -2,7 +2,9 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { CultivoComponent } from './components/cultivo/cultivo.component';
+import { EditarCultivoComponent } from './components/editar-cultivo/editar-cultivo.component';
 import { ItemsCatalogoComponent } from './components/items-catalogo/items-catalogo.component';
+import { ListCultivosComponent } from './components/list-cultivos/list-cultivos.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { MonitoreoGeneralComponent } from './components/monitoreo-general/monitoreo-general.component';
 import { MonitoreoPlantaComponent } from './components/monitoreo-planta/monitoreo-planta.component';
@@ -23,6 +25,9 @@ const routes: Routes = [
   { path: 'monitoreos', component: MonitoreosComponent},
   { path: 'planta', component: PlantaComponent},
   { path: 'plaga-enfermedad', component: PlagaEnfermedadComponent},
+  // Para cultivos
+  { path: 'editar-cultivo', component: EditarCultivoComponent},
+  { path: 'list-cultivos', component: ListCultivosComponent},
   { path: '**', redirectTo: 'menu', pathMatch: 'full' }
 ];
 
