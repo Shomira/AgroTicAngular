@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CatalogoService } from 'src/app/services/catalogo.service';
 
 @Component({
   selector: 'app-catalogo',
@@ -10,8 +11,9 @@ export class CatalogoComponent implements OnInit {
 
   crearCatalogo: FormGroup;
   submitted = false;
+  catalogos: any;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private catalogoService: CatalogoService) {
     this.crearCatalogo = this.fb.group({
       nombre: ['', Validators.required],
       descripcion:  ['', Validators.required]
@@ -21,6 +23,7 @@ export class CatalogoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.readCatalogos();
   }
 
   agregarCatalogo(){
@@ -39,8 +42,30 @@ export class CatalogoComponent implements OnInit {
 
 
     }
-   console.log(catalogo);
+    console.log(catalogo);
+    /* Creacion de catalogo a traves de la API
+    this.catalogoService.create(catalogo)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.submitted = true;
+        },
+        error => {
+          console.log(error);
+        });
+    */
+  }
 
+  readCatalogos(): void {
+    this.catalogoService.readAll()
+      .subscribe(
+        catalogos => {
+          this.catalogos = catalogos;
+          console.log(catalogos);
+        },
+        error => {
+          console.log(error);
+        });
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CultivoService } from 'src/app/services/cultivo.service';
 
 @Component({
   selector: 'app-registrar-cultivo',
@@ -11,7 +12,7 @@ export class RegistrarCultivoComponent implements OnInit {
   crearCultivo: FormGroup;
   submitted = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private cultivoService: CultivoService) {
     this.crearCultivo = this.fb.group({
       nombre: ['', Validators.required],
       origen:  ['', Validators.required],
@@ -108,7 +109,7 @@ export class RegistrarCultivoComponent implements OnInit {
     if(this.crearCultivo.invalid){
       return;
     }
-    const plagaEnfermedad: any= {
+    const cultivo: any= {
       nombre: this.crearCultivo.value.nombre,
       origen: this.crearCultivo.value.origen,
       cicloVida: this.crearCultivo.value.cicloVida,
@@ -190,8 +191,19 @@ export class RegistrarCultivoComponent implements OnInit {
       fechaCreacion: new Date(),
       fechaActualizacion : new Date()
 
-
     }
-    console.log(this.crearCultivo);
+    console.log(cultivo);
+    /* Creacion de Cultivo a traves de la API
+    this.cultivoService.create(cultivo)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.submitted = true;
+        },
+        error => {
+          console.log(error);
+        });
+    */
   }
+  
 }

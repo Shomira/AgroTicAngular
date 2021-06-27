@@ -13,7 +13,8 @@ import { MonitoreoGeneralComponent } from './components/monitoreo-general/monito
 import { MonitoreoPlantaComponent } from './components/monitoreo-planta/monitoreo-planta.component';
 import { PlantaComponent } from './components/planta/planta.component';
 import { PlagaEnfermedadComponent } from './components/plaga-enfermedad/plaga-enfermedad.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
