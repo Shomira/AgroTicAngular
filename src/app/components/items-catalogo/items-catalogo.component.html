@@ -43,15 +43,15 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="" method="POST">
+            <form action="" method="POST" [formGroup]="creatItemsCatalogo" (ngSubmit)="agregarItemsCatalogo()">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input id="nombre" type="text" class="form-control" name="nombre" placeholder="Nombre" autofocus>
+                        <input id="nombre" type="text" class="form-control" formControlName="nombre" placeholder="Nombre" autofocus required>
                     </div>
                     <div class="mb-3">
                         <label for="codigo" class="form-label">Código</label>
-                        <input id="codigo" type="text" class="form-control" name="codigo" placeholder="Código" autofocus>
+                        <input id="codigo" type="text" class="form-control" formControlName="codigo" placeholder="Código" autofocus required>
                     </div>
                     <div class="mb-3">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
