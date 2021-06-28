@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PlagaEnfermedadService } from 'src/app/services/plaga-enfermedad.service';
 
 @Component({
   selector: 'app-plaga-enfermedad',
@@ -9,7 +10,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class PlagaEnfermedadComponent implements OnInit {
   crearPlagaEnfermedad: FormGroup;
   submitted = false;
-  constructor(private fb: FormBuilder) {
+  plagasEnfermedades: any;
+  constructor(private fb: FormBuilder, private plagaEnfermedad: PlagaEnfermedadService) {
     this.crearPlagaEnfermedad = this.fb.group({
       nombreComun: ['', Validators.required],
       nombreCientifico:  ['', Validators.required],
@@ -41,6 +43,29 @@ export class PlagaEnfermedadComponent implements OnInit {
    // console.log(this.crearPlagaEnfermedad);
    console.log(plagaEnfermedad);
 
+    this.plagaEnfermedad.create(plagaEnfermedad)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.submitted = true;
+        },
+        error => {
+          console.log(error);
+        });
+
+
+
+  }
+  readPlagasEnfermedades(): void {
+    this.plagaEnfermedad.readAll()
+      .subscribe(
+        plagasEnfermedades => {
+          this.plagasEnfermedades = this.plagasEnfermedades;
+          console.log(plagasEnfermedades);
+        },
+        error => {
+          console.log(error);
+        });
   }
 
 }

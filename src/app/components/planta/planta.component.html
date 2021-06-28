@@ -49,16 +49,16 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action=''>
+                <form action='' [formGroup]="crearPlanta" (ngSubmit)="agregarPlanta()">
                     <div class="modal-body">
-                        <label for=""> Nombre</label>
-                        <input  class="form-control " type="text">
+                        <label for="" > Nombre</label>
+                        <input  class="form-control " formControlName="nombre" type="text">
                         <label for=""> Variedad</label>
-                        <input  class="form-control " type="text">
+                        <input  class="form-control " formControlName="variedad" type="text">
                         <label for=""> Cultivo</label>
-                        <input  class="form-control " type="text">
+                        <input  class="form-control " formControlName="cultivo" type="text">
                         <label for=""> fecha Siembra</label>
-                        <input  type= "date" class="form-control " >
+                        <input  type= "date" class="form-control " formControlName="fechaSiembra" >
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
