@@ -8,68 +8,54 @@
         <br>
         <section class="card">
             <section class="card-body" >  
-                <form action="" [formGroup]="crearMonitoreoPlanta" (ngSubmit)="agregarMonitoreoPlanta()" >
-                    <fieldset>
-                        <legend>Ubicación</legend>
-                        <div class="row ">
-                            <div class="mb-3 col-4">
-                                <label  for="">Ubicación</label>
-                                <input type="text" class="form-control w-75" formControlName="ubicacion" id="" placeholder="Ubicación" name="">
-                            </div>
-                            <div class="mb-3 col-4">
-                                <label for="">Lugar Lote</label>
-                                <input type="text" class="form-control w-75" id="" formControlName="lugarLote" placeholder="Lugar Lote" name="">
-                            </div>
-                        </div>
-                    </fieldset>
-                    <hr>
+                <form action="" [formGroup]="crearMonitoreoPlanta" (ngSubmit)="agregarMonitoreoPlanta()">
+                    
                     <fieldset>
                         <legend>Datos Fenológicos del cultivo</legend>
                         <div class="row ">
                             <div class="mb-3 col-4">
-                                <label for="">Altura</label>
-                                <input type="number" class="form-control w-75" formControlName="altura" id="" placeholder="" name="">
+                                <label for="altura">Altura</label>
+                                <input type="number" class="form-control w-75" formControlName="altura" id="altura" placeholder="Altura">
                             </div>
                             <div class="mb-3 col-4">
-                                <label for="">Diametro</label>
-                                <input type="number" class="form-control w-75" formControlName="diametro" id="" placeholder="" name="">
+                                <label for="diametro">Diametro</label>
+                                <input type="number" class="form-control w-75" formControlName="diametro" id="diametro" placeholder="Diametro">
                             </div>
                             <div class="mb-3 col-4">
-                                <label for="">Número de racimos por planta</label>
-                                <input type="number" class="form-control w-75"  formControlName="numRacimosPlanta" id="" placeholder="" name="">
+                                <label for="num_racimos_planta">Número de racimos por planta</label>
+                                <input type="number" class="form-control w-75"  formControlName="numRacimosPlanta" id="num_racimos_planta" placeholder="Racimos por planta">
                             </div>
                             <div class="mb-3 col-4">
-                                <label for="">Número de flores por planta </label>
-                                <input type="number" class="form-control w-75" formControlName="numFloresPlanta" id="" placeholder="" name="">
+                                <label for="num_flores_planta">Número de flores por planta </label>
+                                <input type="number" class="form-control w-75" formControlName="numFloresPlanta" id="num_flores_planta" placeholder="Flores por planta">
                             </div>
                             <div class="mb-3 col-4">
-                                <label for="">Número de frutos por planta</label>
-                                <input type="text" class="form-control w-75" id="" formControlName="numFrutosPlanta" placeholder="" name="">
+                                <label for="num_frutos_planta">Número de frutos por planta</label>
+                                <input type="text" class="form-control w-75" id="num_frutos_planta" formControlName="numFrutosPlanta" placeholder="Frutos por planta">
                             </div>
                             <div class="mb-3 col-4">
-                                <label for="">Número de flores por Racimo</label>
-                                <input type="number" class="form-control w-75" id="" formControlName="numFloresRacimo" placeholder="" name="">
+                                <label for="num_flores_racimo">Número de flores por Racimo</label>
+                                <input type="number" class="form-control w-75" id="num_flores_racimo" formControlName="numFloresRacimo" placeholder="Flores por Racimo">
                             </div>
                             <div class="mb-3 col-4">
-                                <label for="">Número de frutos por racimo</label>
-                                <input type="number" class="form-control w-75" formControlName="numFrutosRacimo" id="" placeholder="" name="">
+                                <label for="num_frutos_racimo">Número de frutos por racimo</label>
+                                <input type="number" class="form-control w-75" formControlName="numFrutosRacimo" id="num_frutos_racimo" placeholder="Frutos por racimo">
                             </div>
                             <div class="mb-3 col-4">
-                                <label for="">Longitud del fruto(cm)</label>
-                                <input type="number" class="form-control w-75" formControlName="longitudFruto" id="" placeholder="" name="">
+                                <label for="longitud_fruto">Longitud del fruto(cm)</label>
+                                <input type="number" class="form-control w-75" formControlName="longitudFruto" id="longitud_fruto" placeholder="Longitud del fruto">
                             </div>
                             <div class="mb-3 col-4">
-                                <label for="">Diametro del fruto(cm)</label>
-                                <input type="number" class="form-control w-75"  formControlName="diametroFruto" id="" placeholder="" name="">
+                                <label for="diametro_fruto">Diametro del fruto(cm)</label>
+                                <input type="number" class="form-control w-75"  formControlName="diametroFruto" id="diametro_fruto" placeholder="Diametro del fruto">
                             </div>
                             <div class="mb-3 col-4">
-                                <label for="">Peso del fruto(g)</label>
-
-                                <input type="number" class="form-control w-75" id="" formControlName="pesoFruto" placeholder="" name="">
+                                <label for="peso_fruto">Peso del fruto(g)</label>
+                                <input type="number" class="form-control w-75" id="peso_fruto" formControlName="pesoFruto" placeholder="Peso del fruto">
                             </div>   
                             <div class="mb-3 col-4">
-                                <label for="">Producción por planta(kg)</label>
-                                <input type="number" class="form-control w-75" formControlName="produccionPlanta" id="" placeholder="" name="">
+                                <label for="produccion_planta">Producción por planta(kg)</label>
+                                <input type="number" class="form-control w-75" formControlName="produccionPlanta" id="produccion_planta" placeholder="Producción por planta">
                             </div>  
                         </div>
                     </fieldset>
@@ -78,12 +64,12 @@
                         <legend>Aplicación Fertilizante</legend>
                         <div class="row "> 
                             <div class="mb-3 col-4">
-                                <label for="">Cantidad</label>
-                                <input type="number" class="form-control w-75" formControlName="cantidadF" id="" placeholder="Cantidad de fertilizante por planta en gramos" name="">
+                                <label for="cantidad_f">Cantidad</label>
+                                <input type="number" class="form-control w-75" formControlName="cantidadF" id="cantidad_f" placeholder="Cantidad de fertilizante por planta en gramos">
                             </div>
                             <div class="mb-3 col-4">
-                                <label for="">Fecha </label>
-                                <input type="date" class="form-control w-75" id="" formControlName="fechaF" placeholder="Fecha  fertilizante" name="">
+                                <label for="fecha_f">Fecha </label>
+                                <input type="date" class="form-control w-75" id="fecha_f" formControlName="fechaF" placeholder="Fecha  fertilizante">
                             </div>
                         </div>
                     </fieldset>
@@ -92,19 +78,19 @@
                         <legend>Producto Control Plaga Enfermedades</legend>
                         <div class="row ">
                             <div class="mb-3 col-4">
-                                <label for="">Control plaga enfermedad</label>
-                                <select class="form-control w-75" formControlName="controlPlagaEnfermedad" name="" id="">
+                                <label for="control_plaga_enfermedad">Control plaga enfermedad</label>
+                                <select class="form-control w-75" formControlName="controlPlagaEnfermedad" id="control_plaga_enfermedad">
                                     <option value=""   >1</option>
                                     <option value="" >2</option>
                                 </select>
                             </div>
                             <div class="mb-3 col-4">
-                                <label for="">Cantidad </label>
-                                <input type="number" class="form-control w-75" id="" formControlName="cantidadCP"  placeholder="Cantidad en " name="">
+                                <label for="cantidad_producto">Cantidad </label>
+                                <input type="number" class="form-control w-75" id="cantidad_producto" formControlName="cantidadProducto"  placeholder="Cantidad">
                             </div>   
                             <div class="mb-3 col-4">
-                                <label for="">Fecha de aplicación</label>
-                                <input type="date" formControlName="fecha" class="form-control w-75" id="" placeholder="" name="">
+                                <label for="fecha_aplicacion">Fecha de aplicación</label>
+                                <input type="date" formControlName="fechaAplicacion" class="form-control w-75" id="fecha_aplicacion">
                             </div>
                         </div>
                     </fieldset>
@@ -114,11 +100,11 @@
                         <div class="row ">
                             <div class="mb-3 col-4">
                                 <label for="">Planta</label>
-                                <select class="form-control w-75" formControlName="planta" name="" id=""></select>
+                                <select class="form-control w-75" formControlName="planta" id=""></select>
                             </div> 
                             <div class="mb-3 col-4">
                                 <label for="">Monitoreo General</label>
-                                <select name="" id="" formControlName="monitoreoGeneral" class="form-control w-75" ></select>
+                                <select id="" formControlName="monitoreoGeneral" class="form-control w-75" ></select>
                             </div>
                             <div class="mb-3 col-4">
                                 <label for="">Fertilizante</label>

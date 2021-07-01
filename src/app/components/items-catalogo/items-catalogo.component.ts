@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ItemsCatalogoService } from 'src/app/services/items-catalogo.service';
 
 @Component({
   selector: 'app-items-catalogo',
@@ -10,8 +11,9 @@ export class ItemsCatalogoComponent implements OnInit {
 
   creatItemsCatalogo: FormGroup;
   submitted = false;
+  itemsCatalogos: any;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private itemsCatalogoService: ItemsCatalogoService) {
     this.creatItemsCatalogo = this.fb.group({
       nombre: ['', Validators.required],
       codigo:  ['', Validators.required]
@@ -19,6 +21,7 @@ export class ItemsCatalogoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.readItemsCatalogos();
   }
 
   agregarItemsCatalogo(){
@@ -38,7 +41,29 @@ export class ItemsCatalogoComponent implements OnInit {
 
     }
     console.log(ItemsCatalogo);
+    /* Creacion de Items de Catalogo a traves de la API
+    this.itemsCatalogoService.create(ItemsCatalogo)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.submitted = true;
+        },
+        error => {
+          console.log(error);
+        });
+    */
 
+  }
+  readItemsCatalogos(): void {
+    this.itemsCatalogoService.readAll()
+      .subscribe(
+        itemsCatalogos => {
+          this.itemsCatalogos = itemsCatalogos;
+          console.log(itemsCatalogos);
+        },
+        error => {
+          console.log(error);
+        });
   }
 
 }

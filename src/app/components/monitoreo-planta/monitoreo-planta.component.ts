@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MonitoreoPlantaService } from 'src/app/services/monitoreo-planta.service';
 
 @Component({
   selector: 'app-monitoreo-planta',
@@ -10,10 +11,8 @@ export class MonitoreoPlantaComponent implements OnInit {
   crearMonitoreoPlanta: FormGroup;
   submitted = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private monitoreoPlantaService: MonitoreoPlantaService) {
     this.crearMonitoreoPlanta = this.fb.group({
-      ubicacion: ['', Validators.required],
-      lugarLote:  ['', Validators.required],
 
       // Datos fenologicos del cultivo
       altura:  ['', Validators.required],
@@ -35,8 +34,8 @@ export class MonitoreoPlantaComponent implements OnInit {
 
       // producto control plaga Enfermedad
       controlPlagaEnfermedad:  ['', Validators.required],
-      cantidadCP:  ['', Validators.required],
-      fecha:  ['', Validators.required],
+      cantidadProducto:  ['', Validators.required],
+      fechaAplicacion:  ['', Validators.required],
 
       //Relacion Externa 
       planta:  ['', Validators.required],
@@ -59,8 +58,6 @@ export class MonitoreoPlantaComponent implements OnInit {
       return;
     }
     const MonitoreoPlanta: any= {
-      ubicacion: this.crearMonitoreoPlanta.value.ubicacion,
-      lugarLote: this.crearMonitoreoPlanta.value.lugarLote,
       // Datos fenologicos del cultivo
       altura: this.crearMonitoreoPlanta.value.altura,
       diametro: this.crearMonitoreoPlanta.value.diametro,
@@ -74,17 +71,14 @@ export class MonitoreoPlantaComponent implements OnInit {
       diametroFruto: this.crearMonitoreoPlanta.value.diametroFruto,    
       pesoFruto: this.crearMonitoreoPlanta.value.pesoFruto,
       produccionPlanta: this.crearMonitoreoPlanta.value.produccionPlanta,
-
-      
-
       //Aplicacion Fertitlizante
 
       cantidadF: this.crearMonitoreoPlanta.value.cantidadF,
       fechaF: this.crearMonitoreoPlanta.value.fechaF,
       // producto control plaga Enfermedad
       controlPlagaEnfermedad: this.crearMonitoreoPlanta.value.controlPlagaEnfermedad,
-      cantidadCP: this.crearMonitoreoPlanta.value.cantidadCP,
-      fecha: this.crearMonitoreoPlanta.value.fecha,
+      cantidadProducto: this.crearMonitoreoPlanta.value.cantidadCP,
+      fechaAplicacion: this.crearMonitoreoPlanta.value.fechaAplicacion,
    
       //Relacion Externa 
       planta: this.crearMonitoreoPlanta.value.planta,
@@ -97,6 +91,16 @@ export class MonitoreoPlantaComponent implements OnInit {
 
     }
     console.log(MonitoreoPlanta);
-
+    /* Creacion de Monitoreo Planta a traves de la API
+    this.monitoreoPlantaService.create(MonitoreoPlanta)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.submitted = true;
+        },
+        error => {
+          console.log(error);
+        });
+    */
   }
 }

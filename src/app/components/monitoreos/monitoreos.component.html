@@ -2,7 +2,7 @@
     <section class="card">
         <section class="card-body">
             <span class="h3">Listado de Monitoreos Generales</span>
-            <button class="btn btn-primary float-right" routerLink="/monitoreo-general">Agregar Monitoreo general</button>
+            <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modalCodigoPlanta">Agregar Monitoreo general</button>
             <table class="table table-striped mt-4">
                 <thead>
                     <tr>
@@ -20,7 +20,7 @@
                         <td>10/10/2020</td>
                         <td>200</td>
                         <td>16</td>
-                        <td><button data-toggle="modal" data-target="#modalCodigoPlanta" class="btn btn-secondary" > Agregar Planta</button></td>
+                        <td><button class="btn btn-secondary" routerLink="/monitoreo-planta"> Agregar Monitoreo</button></td>
                         <td><i class="fas fa-eye fa-lg text-info"></i></td>
                         <td><i class="fas fa-edit fa-lg text-info"></i></td>
                         <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
@@ -29,7 +29,7 @@
                         <td>10/10/2020</td>
                         <td>300</td>
                         <td>17</td>
-                        <td><button class="btn btn-secondary"  data-toggle="modal" data-target="#modalCodigoPlanta"> Agregar Planta</button></td>
+                        <td><button class="btn btn-secondary" routerLink="/monitoreo-planta"> Agregar Monitoreo</button></td>
                         <td><i class="fas fa-eye fa-lg text-info"></i></td>
                         <td><i class="fas fa-edit fa-lg text-info"></i></td>
                         <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
@@ -37,29 +37,29 @@
                 </tbody>
             </table>
         </section>
-        <!--Modal Codigo Planta-->
-        <!-- Modal -->
-        <div class="modal fade" id="modalCodigoPlanta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form >
-                        <div class="modal-body">
-                            <label for=""> Ingrese el código de la planta</label>
-                            <input  class="form-control " type="text">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="submit" routerLink='/monitoreo-planta' class="btn btn-primary" >Aceptar</button>
-                        </div>
-                    </form>
+    </section>
+    <!--Modal Codigo Planta-->
+    <!-- Modal -->
+    <div class="modal fade" id="modalCodigoPlanta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
+                <form >
+                    <div class="modal-body">
+                        <label for=""> Ingrese el código de la planta</label>
+                        <input  class="form-control " type="text">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" data-dismiss="modal" routerLink="/monitoreo-general" class="btn btn-primary" >Aceptar</button>
+                    </div>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
 </section>

@@ -3,58 +3,66 @@
     
     <section class="container pt-4">
         <button type="button" class="btn btn-primary">  
-            <a class="aBtnRegresar" href="javascript: history.go(-1)">Regresar</a>
+            <a class="aBtnRegresar" routerLink="/monitoreos">Regresar</a>
         </button>
         <h2 style="text-align: center;">Formulario de Monitoreo General</h2>
         <br>
         <section class="card">
             <section class="card-body"  > 
-                <form action="" [formGroup]="crearMonitoreoGeneral" (ngSubmit)="agregarMonitoreoGeneral()">
+                <form action="">
                     <div class="container ">
                         <fieldset>
                             <legend>Datos generales y ubicación</legend>
                             <div class="row ">
                                 <div class="mb-3 col-4">
-                                    <label  for="">Fecha de Monitoreo</label>
-                                    <input type="date" class="form-control w-75" id="" formControlName="fechaMonitoreo" placeholder="Fecha de Monitoreo" name="">
+                                    <label  for="fecha_monitoreo">Fecha de Monitoreo</label>
+                                    <input type="date" class="form-control w-75" id="fecha_monitoreo" placeholder="Fecha de Monitoreo" formControlName="fechaMonitoreo">
                                 </div>
                                 <div class="mb-3 col-4">
-                                    <label for="">Area Sembrada</label>
-                                    <input type="number" class="form-control w-75" id="" formControlName="areaSembrada" placeholder="Area Sembrada" name="">
+                                    <label for="area_sembrada">Area Sembrada</label>
+                                    <input type="number" class="form-control w-75" id="area_sembrada" placeholder="Area Sembrada" formControlName="areaSembrada">
                                 </div>
                                 <div class="mb-3 col-4">
-                                    <label for="">Germinación y Prendimiento</label>
-                                    <input type="number" class="form-control w-75" id="" formControlName="germinacionPrendimiento" placeholder="Germinación y Prendimiento" name="">
+                                    <label for="germinacion_prendimiento">Germinación y Prendimiento</label>
+                                    <input type="number" class="form-control w-75" id="germinacion_prendimiento" placeholder="Germinación y Prendimiento" formControlName="germinacionPrendimiento">
+                                </div>
+                                <div class="mb-3 col-4">
+                                    <label  for="">Ubicación</label>
+                                    <input type="text" class="form-control w-75" formControlName="ubicacion" id="" placeholder="Ubicación">
+                                </div>
+                                <div class="mb-3 col-4">
+                                    <label for="">Lugar Lote</label>
+                                    <input type="text" class="form-control w-75" id="" formControlName="lugarLote" placeholder="Lugar Lote">
                                 </div>
                             </div>
                         </fieldset>
-                        <hr> 
+                        <hr>
                         <fieldset>
                             <legend>Datos analisis del suelo</legend>
                             <div class="row">
                                 <div class="mb-3 col-4 ">
-                                    <label for="">Porcentaje MO</label>
-                                    <input type="number" class="form-control w-75" id="" formControlName="porcentMo" placeholder="Porcentaje MO" name="">
+                                    <label for="porcentaje_mo">Porcentaje MO</label>
+                                    <input type="number" class="form-control w-75" id="porcentaje_mo" placeholder="Porcentaje MO" formControlName="porcentajeMo">
                                 </div>
                                 <div class="mb-3 col-4">
-                                    <label for="">Ph del suelo</label>
-                                    <input type="number" class="form-control w-75" id="" formControlName="phSuelo" placeholder="Ph del suelo" name="">
+                                    <label for="ph_suelo">Ph del suelo</label>
+                                    <input type="number" class="form-control w-75" id="ph_suelo" placeholder="Ph del suelo" formControlName="phSuelo">
                                 </div>
                                 <div class="mb-3 col-4">
-                                    <label for="">Porcentaje Nitrogeno</label>
-                                    <input type="number" class="form-control w-75" id="" formControlName="nitrogeno" placeholder="Porcentaje Nitrogeno" name="">
+                                    <label for="porcent_nitrogeno">Porcentaje Nitrogeno</label>
+                                    <input type="number" class="form-control w-75" id="porcent_nitrogeno" placeholder="Porcentaje Nitrogeno" formControlName="porcentNitrogeno">
                                 </div>
                                 <div class="mb-3 col-4">
-                                    <label for="">Fosforo mg_hg </label>
-                                    <input type="number" class="form-control w-75" id="" formControlName="fosforo" placeholder="Fosforo mg_hg" name="">
+                                    <label for="fosforo">Fosforo mg_hg </label>
+                                    <input type="number" class="form-control w-75" id="fosforo" placeholder="Fosforo mg_hg" formControlName="fosforo">
                                 </div>
                                 <div class="mb-3 col-4">
-                                    <label for="">Potasio Cmol Kg</label>
-                                    <input type="number" class="form-control w-75" id="" formControlName="potasio" placeholder="Potasio Cmol Kg" name="">
+                                    <label for="potasio">Potasio Cmol Kg</label>
+                                    <input type="number" class="form-control w-75" id="potasio" placeholder="Potasio Cmol Kg" formControlName="potasio">
                                 </div>
                                 <div class="mb-3 col-4">
-                                    <label for="">Otros Elementos</label>
-                                    <input type="text" class="form-control w-75" formControlName="otrosElementos" id="" placeholder="" name="">
+                                    <label for="otros_elementos">Otros Elementos</label>
+                                    <input type="text" class="form-control w-75" id="otros_elementos" placeholder="" formControlName="otrosElementos">
                                 </div>
                             </div>
                         </fieldset>
@@ -63,33 +71,27 @@
                             <legend>Datos generales y ubicación</legend>
                             <div class="row ">
                                 <div class="mb-3 col-4">
-                                    <label for="">Temperatura Celsius</label>
-                                    <input type="number" class="form-control w-75" formControlName="temperaturaC"   id="" placeholder="Temperatura Celsius" name="">
+                                    <label for="temperatura">Temperatura Celsius</label>
+                                    <input type="number" class="form-control w-75"  id="temperatura" placeholder="Temperatura Celsius" formControlName="temperatura">
                                 </div>
                                 <div class="mb-3 col-4">
-                                    <label for="">Humedad relativa (%)</label>
-                                    <input type="number" class="form-control w-75" formControlName="humedadRelativa" id="" placeholder="Porcentaje Humedad relativa" name="">
+                                    <label for="humedad_relativa">Humedad relativa (%)</label>
+                                    <input type="number" class="form-control w-75"  id="humedad_relativa" placeholder="Porcentaje Humedad relativa" formControlName="humedadRelativa">
                                 </div>
                                 <div class="mb-3 col-4">
-                                    <label for="">Riego lluvia (ml)</label>
-                                    <input type="number" class="form-control w-75" formControlName="riegoLluvia" id="" placeholder="Riego lluvia (ml) planta" name="">
+                                    <label for="riego_lluvia">Riego lluvia (ml)</label>
+                                    <input type="number" class="form-control w-75" id="riego_lluvia" placeholder="Riego lluvia (ml) planta" formControlName="riegoLluvia">
                                 </div>   
                                 <div class="mb-3 col-4">
-                                    <label for="">Observaciones</label>
-                                    <textarea name="" id="" formControlName="observaciones" cols="30" rows="10"></textarea>
+                                    <label for="observaciones">Observaciones</label>
+                                    <textarea formControlName="observaciones" id="observaciones" cols="30" rows="10"></textarea>
                                 </div>
                                 <div class="mb-3 col-4">
-                                    <label for="">Usuario</label>
-                                    <select class="form-control w-75" formControlName="usuario" name="" id="">
-                                        <option value=""  >opcion 1 </option>
-                                    </select>
+                                    <label for="usuario">Usuario</label>
+                                    <select class="form-control w-75"  formControlName="usuario" id="usuario"></select>
                                 </div>
                             </div>
                         </fieldset>
-                    </div>
-                    <div class="mb-3 col-6">
-                        <button type="submit" class="btn btn-primary">Guardar</button>
-                        <button type="button" class="btn btn-danger ml-5">Cancelar</button>
                     </div>
                 </form>
             </section>
