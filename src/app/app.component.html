@@ -1,29 +1,109 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light navPrincipal">
-    <div class="container-fluid">
-        <a class="navbar-brand" routerLink="/menu">AGRO-TIC</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <div class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Datos Generales
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" aria-current="page" routerLink="/cultivos">Cultivos</a>
-                        <a class="dropdown-item" aria-current="page" routerLink="/planta">Plantas</a>
-                        <a class="dropdown-item" aria-current="page" routerLink="/catalogos">Catálogos</a>
-                        <a class="dropdown-item" aria-current="page" routerLink="/plaga-enfermedad">Plagas y Enfermedades</a>
-                    </div>
-                </div>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/monitoreos">Monitoreos</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<div id="wrapper">
+    <ul class="navbar-nav  sidebar sidebar-dark accordion" style="background-color: #27441c" id="accordionSidebar">
 
-<router-outlet></router-outlet>
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" >
+            <div class="sidebar-brand-icon rotate-n-1">
+                <i class="fas fa-seedling"></i>
+            </div>
+            <div class="sidebar-brand-text mx-1"> AGRO-TIC</div>
+        </a>
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+        <hr class="sidebar-divider">
+            <!-- Heading -->
+        <div class="sidebar-heading">
+            MÓDULOS
+        </div>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link " routerLink="/menu">
+                <i class="fa fa-home fa-fw"></i>
+                <span> Inicio</span>
+            </a>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider ">
+            
+        <!-- Nav Item - Charts -->
+        <li class="nav-item">
+            <a class="nav-link " routerLink="/cultivos">
+                <i class="fa fa-users fa-fw" ></i>
+                <span> Cultivos</span>
+            </a>
+        </li>    
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+        <!-- Nav Item - Charts -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-table fa-fw"></i>
+                <span>Datos Generales</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" routerLink="/cultivos" >Cultivos</a>
+                    <a class="collapse-item" routerLink="/planta">Plantas</a>
+                    <a class="collapse-item" routerLink="/catalogos">Catalogos</a>
+                    <a class="collapse-item" routerLink="/plaga-enfermedad">Plagas y Enfermedades</a> 
+                </div>
+            </div>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+        <li class="nav-item">
+            <a class="nav-link collapsed " routerLink="/monitoreos">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Monitoreos</span>
+            </a>
+        </li>
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+        <br>
+        <!-- Sidebar Message -->
+        <div class="sidebar-card">
+            <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="">
+            <p class="text-center mb-2"><strong></strong> </p>
+            <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">UTPL</a>
+        </div>   
+    </ul>
+         <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+        <!-- End of Topbar -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+            <!--Inicio Barra-->
+            <section style="margin-top: 0.5em; padding-top: -1em;" ></section>
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h2><img style="margin-right: 0.5em; margin-bottom: -0.5em;" > Bienvenid@ Administrador </h2>
+                <li class="nav-item dropdown no-arrow" >
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="mr-3 d-none d-lg-inline text-gray-900 "> </span>
+                        <img class="img-profile rounded-circle">
+                    </a>
+                </li>
+            </div>
+            <hr><!--Fin barra-->
+            <router-outlet></router-outlet>
+        </div>
+        <!-- Footer -->
+        <div class="row marcasAdmin">
+            <hr>
+            <div class="col-sm-3 marcasImg" ></div>
+            <div class="col-sm-3 marcasImg" ><img src="imgs/Recurso 8@3x.png" alt=""></div>
+            <div class="col-sm-3 marcasImg" ><img src="imgs/Recurso 13.png" alt=""></div>
+            
+        </div>
+        <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+</div>
+
 

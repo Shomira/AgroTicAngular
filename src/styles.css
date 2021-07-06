@@ -20,3 +20,23 @@
   #myBtn:hover {
     background-color: rgb(77, 38, 53);
   }
+.lineaIzquierda{
+    border-left: 6px solid rgb(22, 128, 31);
+    border-bottom: 1px solid rgb(190, 216, 160);
+    background-color: rgb(215, 247, 185);
+    margin-bottom: 1.5em;
+}
+.principalV h5{
+    color: #4e4c4c;
+    
+}
+.principalV .row .rounded{
+    align-content: center;
+}
+/*
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+*/
