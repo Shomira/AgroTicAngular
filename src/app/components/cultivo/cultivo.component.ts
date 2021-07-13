@@ -13,7 +13,7 @@ export class CultivoComponent implements OnInit {
   constructor(private cultivoService: CultivoService) { }
 
   ngOnInit(): void {
-    // this.readCultivos();
+    this.readCultivos(); 
   }
 
   readCultivos(): void {

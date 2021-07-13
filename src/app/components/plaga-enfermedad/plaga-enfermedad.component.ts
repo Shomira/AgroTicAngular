@@ -22,6 +22,7 @@ export class PlagaEnfermedadComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.readPlagasEnfermedades();
   }
 
   agregarPlagaEnfermedad(){
@@ -38,10 +39,10 @@ export class PlagaEnfermedadComponent implements OnInit {
       fechaCreacion: new Date(),
       fechaActualizacion : new Date()
 
-
     }
+    
    // console.log(this.crearPlagaEnfermedad);
-   console.log(plagaEnfermedad);
+    console.log(plagaEnfermedad);
 
     this.plagaEnfermedad.create(plagaEnfermedad)
       .subscribe(
@@ -52,10 +53,8 @@ export class PlagaEnfermedadComponent implements OnInit {
         error => {
           console.log(error);
         });
-
-
-
   }
+
   readPlagasEnfermedades(): void {
     this.plagaEnfermedad.readAll()
       .subscribe(

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const baseURL = 'http://localhost:8081/cultivos';
+const baseURL = 'http://127.0.0.1:8081/cultivos';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class CultivoService {
   }
 
   read(id: any): Observable<any> {
-    return this.httpClient.get(`${baseURL}/${id}`);
+    return this.httpClient.get( `${baseURL}/${id}`);
   }
 
   create(data: any): Observable<any> {
