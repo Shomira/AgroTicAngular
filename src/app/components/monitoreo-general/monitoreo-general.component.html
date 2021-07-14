@@ -9,7 +9,7 @@
         <br>
         <section class="card">
             <section class="card-body"  > 
-                <form action="">
+                <form action="" [formGroup]="crearMonitoreoGeneral" (ngSubmit)="agregarMonitoreoGneral()">
                     <div class="container ">
                         <fieldset>
                             <legend>Datos generales y ubicación</legend>
@@ -90,6 +90,10 @@
                                     <label for="usuario">Usuario</label>
                                     <select class="form-control w-75"  formControlName="usuario" id="usuario"></select>
                                 </div>
+                            </div>
+                            <div class="mb-3 col-6">
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <button type="button" class="btn btn-danger ml-5">Cancelar</button>
                             </div>
                         </fieldset>
                     </div>

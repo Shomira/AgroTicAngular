@@ -3,7 +3,7 @@
         <div class=" container principalV">
             <div class="row">  
                 <div class=" pb-3">
-                    <h2 class="text-black pt-3">MONITOREOS</h2>
+                    <h4 class="text-black pt-3">MONITOREOS</h4>
                 </div>
             </div>
         </div>
@@ -18,31 +18,23 @@
                         <th>Fecha Monitoreo</th>
                         <th>Area Sembrada</th>
                         <th>Temperatura clima</th>
-                        <th>Monitoreo Planta</th>
+                        <th>Monitoreos</th>
                         <th>Ver</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>10/10/2020</td>
-                        <td>200</td>
-                        <td>16</td>
+                    <tr *ngFor="let monitoreo of monitoreos">
+                        <td>{{monitoreo.fechaMonitoreo}}</td>
+                        <td>{{monitoreo.areaSembrada}}</td>
+                        <td>{{monitoreo.temperaturaCelsius}}</td>
                         <td><button class="btn btn-secondary" routerLink="/monitoreo-planta"> Agregar Monitoreo</button></td>
                         <td><i class="fas fa-eye fa-lg text-info"></i></td>
                         <td><i class="fas fa-edit fa-lg text-info"></i></td>
                         <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
                     </tr>
-                    <tr>
-                        <td>10/10/2020</td>
-                        <td>300</td>
-                        <td>17</td>
-                        <td><button class="btn btn-secondary" routerLink="/monitoreo-planta"> Agregar Monitoreo</button></td>
-                        <td><i class="fas fa-eye fa-lg text-info"></i></td>
-                        <td><i class="fas fa-edit fa-lg text-info"></i></td>
-                        <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
-                    </tr>
+                 
                 </tbody>
             </table>
         </section>

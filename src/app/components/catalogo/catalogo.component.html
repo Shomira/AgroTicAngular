@@ -3,7 +3,7 @@
         <div class=" container principalV">
             <div class="row">  
                 <div class=" pb-3">
-                    <h2 class="text-black pt-3">CATALOGOS</h2>
+                    <h4 class="text-black pt-3">CATALOGOS</h4>
                 </div>
             </div>
         </div>
@@ -23,17 +23,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Taxonomia</td>
-                    <td>Catálogo 1</td>
-                    <td><button class="btn btn-secondary" routerLink="/items-catalogo">Ver</button></td>
-                    <td><i class="fas fa-edit fa-lg text-info"></i></td>
-                    <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
-                  </tr>
-                  <tr>
-                    <td>Taxonomia</td>
-                    <td>Catálogo 2</td>
-                    <td><button class="btn btn-secondary" routerLink="/items-catalogo">Ver</button></td>
+                  <tr *ngFor="let catalogo of catalogos" >
+                    <td>{{catalogo.nombre}}</td>
+                    <td>{{catalogo.descripcion}}</td>
+                    <td><button class="btn btn-secondary" [routerLink]="['/items-catalogo/', catalogo.id]">Ver</button></td>
                     <td><i class="fas fa-edit fa-lg text-info"></i></td>
                     <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
                   </tr>

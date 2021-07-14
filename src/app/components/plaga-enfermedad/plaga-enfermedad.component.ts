@@ -10,12 +10,12 @@ import { PlagaEnfermedadService } from 'src/app/services/plaga-enfermedad.servic
 export class PlagaEnfermedadComponent implements OnInit {
   crearPlagaEnfermedad: FormGroup;
   submitted = false;
-  plagasEnfermedades: any;
+  plagasEnfermedades: any [] = [];
+
   constructor(private fb: FormBuilder, private plagaEnfermedad: PlagaEnfermedadService) {
     this.crearPlagaEnfermedad = this.fb.group({
       nombreComun: ['', Validators.required],
       nombreCientifico:  ['', Validators.required],
-     
 
     })
 
@@ -54,7 +54,7 @@ export class PlagaEnfermedadComponent implements OnInit {
           console.log(error);
         });
   }
-
+/*
   readPlagasEnfermedades(): void {
     this.plagaEnfermedad.readAll()
       .subscribe(
@@ -65,6 +65,23 @@ export class PlagaEnfermedadComponent implements OnInit {
         error => {
           console.log(error);
         });
+  }*/
+  readPlagasEnfermedades(): void {
+    this.plagaEnfermedad.readAll()
+      .subscribe(data => {
+        this.plagasEnfermedades = [];
+        //console.log(plagasEnfermedades);
+          data.forEach((element:any )=> {
+            this.plagasEnfermedades.push({
+              id: element.id,
+              ...element
+            })
+       
+          });
+     
+        },
+        error => {
+          console.log(error);
+        });
   }
-
 }

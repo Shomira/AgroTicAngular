@@ -10,14 +10,18 @@ import { MonitoreosComponent } from './components/monitoreos/monitoreos.componen
 import { PlagaEnfermedadComponent } from './components/plaga-enfermedad/plaga-enfermedad.component';
 import { PlantaComponent } from './components/planta/planta.component';
 import { RegistrarCultivoComponent } from './components/registrar-cultivo/registrar-cultivo.component';
+import { VerCultivoComponent } from './components/ver-cultivo/ver-cultivo.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'menu', pathMatch: 'full' },
   { path: 'menu', component: MenuComponent },
+  
   { path: 'cultivos', component: CultivoComponent },
+  { path: 'ver-cultivo/:id', component: VerCultivoComponent},
+
   { path: 'registro-cultivo', component: RegistrarCultivoComponent },
   { path: 'catalogos', component: CatalogoComponent},
-  { path: 'items-catalogo', component: ItemsCatalogoComponent},
+  { path: 'items-catalogo/:id', component: ItemsCatalogoComponent},
   { path: 'monitoreo-general', component: MonitoreoGeneralComponent},
   { path: 'monitoreo-planta', component: MonitoreoPlantaComponent},
   { path: 'monitoreos', component: MonitoreosComponent},

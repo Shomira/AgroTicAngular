@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ItemsCatalogoService } from 'src/app/services/items-catalogo.service';
 
 @Component({
@@ -11,17 +12,22 @@ export class ItemsCatalogoComponent implements OnInit {
 
   creatItemsCatalogo: FormGroup;
   submitted = false;
-  itemsCatalogos: any;
+  itemsCatalogos: any [] = [];
+  id: string | null;
 
-  constructor(private fb: FormBuilder, private itemsCatalogoService: ItemsCatalogoService) {
+  constructor(private fb: FormBuilder, 
+              private itemsCatalogoService: ItemsCatalogoService,
+              private aRoute: ActivatedRoute ) {
     this.creatItemsCatalogo = this.fb.group({
       nombre: ['', Validators.required],
       codigo:  ['', Validators.required]
     })
+    this.id = this.aRoute.snapshot.paramMap.get('id');
+    
   }
 
   ngOnInit(): void {
-    // this.readItemsCatalogos();
+    this.readItemsCatalogos();
   }
 
   agregarItemsCatalogo(){
@@ -54,16 +60,32 @@ export class ItemsCatalogoComponent implements OnInit {
     */
 
   }
-  readItemsCatalogos(): void {
-    this.itemsCatalogoService.readAll()
-      .subscribe(
-        itemsCatalogos => {
-          this.itemsCatalogos = itemsCatalogos;
-          console.log(itemsCatalogos);
-        },
-        error => {
-          console.log(error);
-        });
+
+  readItemsCatalogos(){
+    if (this.id != null) {
+      this.itemsCatalogoService.read(this.id).subscribe(data => {
+        this.itemsCatalogos = [];
+        // Un Item
+        if (Array.length <= 1) {
+          this.itemsCatalogos.push({
+            nombre: data.nombreItem,
+            id: data.id
+           })
+
+        // Varios Items
+        } else if (Array.length > 1)   {
+          data.forEach((element:any )=> {
+            this.itemsCatalogos.push({
+              id: data.id,
+              ...element
+            })
+
+          });
+        }
+      });
+      
+    }
   }
+
 
 }

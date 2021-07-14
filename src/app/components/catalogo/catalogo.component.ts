@@ -11,7 +11,7 @@ export class CatalogoComponent implements OnInit {
 
   crearCatalogo: FormGroup;
   submitted = false;
-  catalogos: any;
+  catalogos: any [] = [];
 
   constructor(private fb: FormBuilder, private catalogoService: CatalogoService) {
     this.crearCatalogo = this.fb.group({
@@ -23,7 +23,7 @@ export class CatalogoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.readCatalogos();
+    this.readCatalogos();
   }
 
   agregarCatalogo(){
@@ -58,10 +58,17 @@ export class CatalogoComponent implements OnInit {
 
   readCatalogos(): void {
     this.catalogoService.readAll()
-      .subscribe(
-        catalogos => {
-          this.catalogos = catalogos;
-          console.log(catalogos);
+      .subscribe(data => {
+        this.catalogos = [];
+          data.forEach((element:any )=> {
+            this.catalogos.push({
+              id: element.id,
+              ...element
+            })
+      
+          });
+          console.log(this.catalogos);
+    
         },
         error => {
           console.log(error);

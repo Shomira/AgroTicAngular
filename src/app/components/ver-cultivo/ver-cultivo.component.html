@@ -1,0 +1,44 @@
+<section class="container pt-4">
+    
+    <div class="lineaIzquierdaSubCultivo">
+        <div class=" container principalVSub">
+            <div class="row">  
+                <div class=" pb-3">
+                    <h3 class="text-black pt-3">Cultivo de {{nombre}} </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary btnRegresarItems">  
+        <a class="aBtnRegresar" href="javascript: history.go(-1)">Regresar</a>
+    </button>
+    <section class="card">
+        <section class="card-body">
+            <span class="h3">Listado de Cultivos</span>
+            
+
+            <table class="table table-striped mt-4">
+                <thead>
+                    <tr>
+                        <th>Cultivo</th>
+                        <th>Origen</th>
+                        <th>Riego</th>
+                        <th>Ciclo de Vida</th>
+               
+                       
+              
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr  *ngFor="let cultivo of cultivos" >
+                        <td>{{cultivo.nombre}}</td>
+                        <td>{{cultivo.origen}}</td>
+                        <td>{{cultivo.riego}}</td>
+                        <td>{{cultivo.cicloVida}}</td>
+                    </tr>
+              
+                </tbody>
+            </table>
+        </section>
+    </section>
+</section>

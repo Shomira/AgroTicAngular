@@ -1,11 +1,13 @@
-section.items{
-    margin: 0 auto;
+
+.lineaIzquierdaItems{
+    border-left: 6px solid rgb(65, 66, 65);
+    border-bottom: 1px solid rgb(190, 216, 160);
+    background-color: rgb(213, 214, 212);
+    margin-bottom: 1.5em;
 }
-.aBtnRegresar{
-    text-decoration: none;
-    color: white;
+.lineaIzquierdaItems{
+    width: 75%;
 }
-.btnRegresarItems{
-    margin-left: 8.90em;
-    margin-bottom: 0.5em;
+.principalVItems .row .rounded{
+    align-content: center;
 }

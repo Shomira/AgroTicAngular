@@ -8,23 +8,28 @@ import { MonitoreoGeneralService } from 'src/app/services/monitoreo-general.serv
 })
 export class MonitoreosComponent implements OnInit {
 
-  monitoreosGenerales: any;
+  monitoreos: any [] = [];
 
   constructor(private monitoreoGeneralService: MonitoreoGeneralService) { }
 
   ngOnInit(): void {
+    this.readMonitoreos();
   }
 
   readMonitoreos(): void {
-    this.monitoreoGeneralService.readAll()
-      .subscribe(
-        monitoreosGenerales => {
-          this.monitoreosGenerales = monitoreosGenerales;
-          console.log(monitoreosGenerales);
-        },
-        error => {
-          console.log(error);
-        });
+    this.monitoreoGeneralService.readAll().subscribe(data => {
+      this.monitoreos = [];
+      data.forEach((element:any )=> {
+        this.monitoreos.push({
+          id: element.id,
+          ...element
+        })
+      });
+
+    },
+    error => {
+      console.log(error);
+    });
   }
 
 }

@@ -11,7 +11,7 @@ export class PlantaComponent implements OnInit {
 
   crearPlanta: FormGroup;
   submitted = false;
-  plantas: any;
+  plantas: any[] = [];
 
   constructor(private fb: FormBuilder, private plantaService: PlantaService) {
     this.crearPlanta = this.fb.group({
@@ -24,6 +24,7 @@ export class PlantaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.readPlantas();
   }
 
   agregarPlanta(){
@@ -59,14 +60,21 @@ export class PlantaComponent implements OnInit {
 */
   }
   readPlantas(): void {
-    this.plantaService.readAll()
-      .subscribe(
-        plantas => {
-          this.plantas = plantas;
-          console.log(plantas);
-        },
-        error => {
-          console.log(error);
-        });
+    this.plantaService.readAll().subscribe(data => {
+      this.plantas= [];
+      data.forEach((element:any )=> {
+        this.plantas.push({
+          id: element.id,
+          variedad: element.variedad,
+          cultivo: element.cultivo,
+          ...element
+      
+        })
+      });
+
+    },
+    error => {
+      console.log(error);
+    });
   }
 }

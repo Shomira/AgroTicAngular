@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const baseURL = 'http://127.0.0.1:8081/monitoreos-planta';
+const baseURL = 'http://127.0.0.1:8081/monitoreos_plantas';
 
 @Injectable({
   providedIn: 'root'

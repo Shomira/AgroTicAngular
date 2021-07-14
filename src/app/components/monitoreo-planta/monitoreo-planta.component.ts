@@ -10,6 +10,7 @@ import { MonitoreoPlantaService } from 'src/app/services/monitoreo-planta.servic
 export class MonitoreoPlantaComponent implements OnInit {
   crearMonitoreoPlanta: FormGroup;
   submitted = false;
+  monitoreoPlantas: any;
 
   constructor(private fb: FormBuilder, private monitoreoPlantaService: MonitoreoPlantaService) {
     this.crearMonitoreoPlanta = this.fb.group({
@@ -46,6 +47,7 @@ export class MonitoreoPlantaComponent implements OnInit {
     })
   }
   ngOnInit(): void {
+    this.readMonitoreoPlantas();
   }
 
 
@@ -102,5 +104,17 @@ export class MonitoreoPlantaComponent implements OnInit {
           console.log(error);
         });
     */
+
+  }
+  readMonitoreoPlantas(): void {
+    this.monitoreoPlantaService.readAll()
+      .subscribe(
+          monitoreoPlantas => {
+          this.monitoreoPlantas = monitoreoPlantas;
+          console.log(monitoreoPlantas);
+        },
+        error => {
+          console.log(error);
+        });
   }
 }

@@ -1,4 +1,13 @@
 <section class="container pt-4">
+    <div class="lineaIzquierdaSub">
+        <div class=" container principalVSub">
+            <div class="row">  
+                <div class=" pb-3">
+                    <h5 class="text-black pt-3">ITEMS DE CATALOGO </h5>
+                </div>
+            </div>
+        </div>
+    </div>
     <button type="button" class="btn btn-primary btnRegresarItems">  
         <a class="aBtnRegresar" href="javascript: history.go(-1)">Regresar</a>
     </button>
@@ -16,18 +25,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Familia</td>
-                        <td>1</td>
+                    <tr *ngFor="let itemCatalogo of itemsCatalogos" >
+                        <td>{{itemCatalogo.nombre}}</td>
+                        <td>{{itemCatalogo.id}}</td>
                         <td><i class="fas fa-edit fa-lg text-info"></i></td>
                         <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
                     </tr>
-                    <tr>
-                        <td>Género</td>
-                        <td>2</td>
-                        <td><i class="fas fa-edit fa-lg text-info"></i></td>
-                        <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
-                    </tr>
+                  
                 </tbody>
             </table>
         </section>
@@ -47,7 +51,7 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input id="nombre" type="text" class="form-control" formControlName="nombre" placeholder="Nombre" autofocus required>
+                        <input id="nombre"  type="text" class="form-control" formControlName="nombre" placeholder="Nombre" autofocus required>
                     </div>
                     <div class="mb-3">
                         <label for="codigo" class="form-label">Código</label>

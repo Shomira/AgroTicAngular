@@ -8,7 +8,7 @@ import { CultivoService } from 'src/app/services/cultivo.service';
 })
 export class CultivoComponent implements OnInit {
 
-  cultivos: any;
+  cultivos: any [] = [];
 
   constructor(private cultivoService: CultivoService) { }
 
@@ -17,16 +17,20 @@ export class CultivoComponent implements OnInit {
   }
 
   readCultivos(): void {
-    this.cultivoService.readAll()
-      .subscribe(
-        cultivos => {
-          this.cultivos = cultivos;
-          console.log(cultivos);
-        },
-        error => {
-          console.log(error);
-        });
+    this.cultivoService.readAll().subscribe(data => {
+      this.cultivos = [];
+      data.forEach((element:any )=> {
+        this.cultivos.push({
+          id: element.id,
+          ...element
+        })
+  
+      });
+      // console.log(this.cultivos);
+    },
+    error => {
+      console.log(error);
+    });
   }
-
 
 }

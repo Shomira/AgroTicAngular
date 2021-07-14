@@ -15,6 +15,7 @@ import { PlantaComponent } from './components/planta/planta.component';
 import { PlagaEnfermedadComponent } from './components/plaga-enfermedad/plaga-enfermedad.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { VerCultivoComponent } from './components/ver-cultivo/ver-cultivo.component';
 //import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -30,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     MonitoreoPlantaComponent, 
     PlantaComponent,
     PlagaEnfermedadComponent,
+    VerCultivoComponent,
     
   ],
   imports: [

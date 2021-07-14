@@ -11,9 +11,9 @@ export class MonitoreoGeneralComponent implements OnInit {
 
   crearMonitoreoGeneral: FormGroup;
   submitted = false;
-  monitoreosGenerales: any;
+  monitoreosGenerales: any [] = [];
 
-  constructor(private fb: FormBuilder, private monitoreoGenralService: MonitoreoGeneralService) {
+  constructor(private fb: FormBuilder, private monitoreoGeneralService: MonitoreoGeneralService) {
     this.crearMonitoreoGeneral = this.fb.group({
       ubicacion: ['', Validators.required],
       lugarLote:  ['', Validators.required],
@@ -36,10 +36,10 @@ export class MonitoreoGeneralComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.readMonitoreosGenerales();
+    
   }
 
-  agregarCatalogo(){
+  agregarMonitoreoGneral(){
 
     // validacion de los campos llenados
     this.submitted = true;
@@ -80,6 +80,8 @@ export class MonitoreoGeneralComponent implements OnInit {
           console.log(error);
         });
     */
+   
   }
+
 
 }

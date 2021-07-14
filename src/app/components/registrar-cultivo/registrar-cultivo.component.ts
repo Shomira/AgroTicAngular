@@ -11,6 +11,7 @@ export class RegistrarCultivoComponent implements OnInit {
 
   crearCultivo: FormGroup;
   submitted = false;
+  registrarCultivos: any;
 
   constructor(private fb: FormBuilder, private cultivoService: CultivoService) {
     this.crearCultivo = this.fb.group({
@@ -100,6 +101,7 @@ export class RegistrarCultivoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.readRegistrarCultivos();
   }
 
   agregarCultivo(){
@@ -204,6 +206,17 @@ export class RegistrarCultivoComponent implements OnInit {
           console.log(error);
         });
     */
+  }
+  readRegistrarCultivos(): void {
+    this.cultivoService.readAll()
+      .subscribe(
+          registrarCultivos => {
+          this.registrarCultivos = registrarCultivos;
+          console.log(registrarCultivos);
+        },
+        error => {
+          console.log(error);
+        });
   }
   
 }
