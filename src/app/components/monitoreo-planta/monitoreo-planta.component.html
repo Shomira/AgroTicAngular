@@ -64,6 +64,13 @@
                         <legend>Aplicación Fertilizante</legend>
                         <div class="row "> 
                             <div class="mb-3 col-4">
+                                <label for="">Fertilizante</label>
+                                <select class="form-control w-75" formControlName="fertilizante" name="" id="">
+                                    <option value="" >1</option>
+                                    <option value="" >2</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 col-4">
                                 <label for="cantidad_f">Cantidad</label>
                                 <input type="number" class="form-control w-75" formControlName="cantidadF" id="cantidad_f" placeholder="Cantidad de fertilizante por planta en gramos">
                             </div>
@@ -94,27 +101,8 @@
                             </div>
                         </div>
                     </fieldset>
-                    <hr>
-                    <fieldset>
-                        <legend>Relacion Externa </legend>
-                        <div class="row ">
-                            <div class="mb-3 col-4">
-                                <label for="">Planta</label>
-                                <select class="form-control w-75" formControlName="planta" id=""></select>
-                            </div> 
-                            <div class="mb-3 col-4">
-                                <label for="">Monitoreo General</label>
-                                <select id="" formControlName="monitoreoGeneral" class="form-control w-75" ></select>
-                            </div>
-                            <div class="mb-3 col-4">
-                                <label for="">Fertilizante</label>
-                              <select class="form-control w-75" formControlName="fertilizante" name="" id="">
-                                    <option value="" >1</option>
-                                    <option value="" >2</option>
-                              </select>
-                            </div>
-                        </div>
-                    </fieldset>
+                    <br>
+                    <br>
                     <div class="mb-3 col-6">
                         <button type="submit" class="btn btn-primary">Guardar</button>
                         <button type="button" class="btn btn-danger ml-5">Cancelar</button>

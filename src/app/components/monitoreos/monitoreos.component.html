@@ -53,11 +53,12 @@
                 <form >
                     <div class="modal-body">
                         <label for=""> Ingrese el código de la planta</label>
-                        <input  class="form-control " type="text">
+                        <input  class="form-control " type="text" #planta>
                     </div>
                     <div class="modal-footer">
+                        <p>{{planta.value}} </p>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" data-dismiss="modal" routerLink="/monitoreo-general" class="btn btn-primary" >Aceptar</button>
+                        <button type="submit" (click)="elegirPlanta(planta.value)" data-dismiss="modal"  class="btn btn-primary" >Aceptar</button>
                     </div>
                 </form>
             </div>

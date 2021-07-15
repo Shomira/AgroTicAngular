@@ -9,36 +9,528 @@
             </div>
         </div>
     </div>
-    <button type="button" class="btn btn-primary btnRegresarItems">  
-        <a class="aBtnRegresar" href="javascript: history.go(-1)">Regresar</a>
-    </button>
-    <section class="card">
-        <section class="card-body">
-            <span class="h3">Listado de Cultivos</span>
-            
+    <div class="btnRegresar">
+        <button type="button" class="btn btn-primary">  
+            <a class="aBtnRegresar" href="javascript: history.go(-1)">Regresar</a>
+        </button>
+    </div>
+    <div class="accordion" id="accordionPanelsStayOpenExample"  >
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Generalidades
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+                <div class="row ">
+                    <div class="ml-4 mb-3 col-5">
+                        <p><li><strong>Ciclo de vida</strong></li>
+                            {{cultivos?.cicloVida}}
+                        </p>
+                        <p><li><strong>Zona de producción en Ecuador</strong></li>
+                            {{cultivos?.zonaProduccion}}
+                        </p>
+                        
+                    </div>
+                    <div class="mb-3 col-5">
+                        <p><li><strong>Origen</strong></li>
+                            {{cultivos?.origen}}
+                        </p>
+                        <p><li><strong>Clima en la que se produce</strong></li>
+                            {{cultivos?.clima}}
+                        </p>
+                        
+                    </div>
+                    <div class=" ml-4 mb-3 col-5">
+                        <p><li><strong>Húmedad</strong></li>
+                            Máxima: {{cultivos?.humedad.humedadMax}} <br>
+                            Mínima: {{cultivos?.humedad.humedadMin}}
+                        </p>
+                    </div>
+                    <div class=" mb-3 col-6">
+                        <p><li><strong>Tamaño de planta</strong></li>
+                            Altura: {{cultivos?.tamanio.altura}} <br>
+                            Diametro: {{cultivos?.tamanio.diametro}}
+                        </p>
+                      
+                    </div>
+                    <div class=" ml-4 mb-3 col-5">
+                      
+                        <p><li><strong>Fertilización</strong></li>
+                            {{cultivos?.fertilizacion}}
+                        </p>
+                        
+                    </div>
+                
+                    <div class="  mb-3 col-5">
+                        <p><li><strong>Abonamiento</strong></li>
+                            {{cultivos?.abonamiento}}
+                        </p>
+                    
+                    </div>
+                    <hr style=" width:95%; margin-left: 1em;">
+                    <div class=" ml-4 mb-3 col-10">
+                        <p><li><strong>Riego</strong></li>
+                            {{cultivos?.riego}}
+                        </p>
+                        <p><li><strong>Uso y aplicación</strong></li>
+                            {{cultivos?.usoAplicacion}}
+                        </p>
+                        <p><li><strong>Control malas hierbas</strong></li>
+                            {{cultivos?.controlMalasHierbas}}
+                        </p>
+                    </div>
+                
+                </div>
 
-            <table class="table table-striped mt-4">
-                <thead>
-                    <tr>
-                        <th>Cultivo</th>
-                        <th>Origen</th>
-                        <th>Riego</th>
-                        <th>Ciclo de Vida</th>
-               
-                       
-              
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr  *ngFor="let cultivo of cultivos" >
-                        <td>{{cultivo.nombre}}</td>
-                        <td>{{cultivo.origen}}</td>
-                        <td>{{cultivo.riego}}</td>
-                        <td>{{cultivo.cicloVida}}</td>
-                    </tr>
-              
-                </tbody>
-            </table>
-        </section>
-    </section>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
+                Taxonomia
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse " aria-labelledby="panelsStayOpen-headingFour">
+              <div class="accordion-body">
+                  <div class="row ">
+                      <div class="ml-4 mb-3 col-4">
+                          <p><li><strong>Nombre Comun: </strong></li>
+                              {{cultivos?.taxonomia.nombreComun}}  
+                          </p>
+                          <p><li><strong>Nombre Científico: </strong></li>
+                              {{cultivos?.taxonomia.nombreCientifico}}  
+                          </p>
+                      </div>
+                      <div class="mb-3 col-3">
+                          <p><li><strong>Familia: </strong></li>
+                              {{cultivos?.taxonomia.familia}}  
+                          </p>
+                          <p><li><strong>Genero: </strong></li>
+                              {{cultivos?.taxonomia.genero}}  
+                          </p>
+                          
+                      </div>
+                      <div class="mb-3 col-4">
+                          <p><li><strong>Especie: </strong></li>
+                              {{cultivos?.taxonomia.especie}}  
+                          </p>
+                      </div>
+  
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+              Morfología
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body">
+                <div class="row ">
+                    <div class="ml-4 mb-2 col-6">
+                        <p><li><strong>Raíz: </strong></li>
+                            {{cultivos?.morfologia.raiz}}  
+                        </p>
+                        <p><li><strong>Hojas: </strong></li>
+                            {{cultivos?.morfologia.hojas}}  
+                        </p>
+                    </div>
+                    <div class=" ml-2 mb-2 col-5">
+                        <p><li><strong>Tallo: </strong></li>
+                            {{cultivos?.morfologia.tallo}}  
+                        </p>
+                        <p><li><strong>Semillas: </strong></li>
+                            {{cultivos?.morfologia.semilla}}  
+                        </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+              Variedades
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+            <div class="accordion-body">
+                <div class="row ">
+                    <div class="ml-4 mb-3 col-5" *ngFor="let variedad of variedades">
+                        <p><li><strong>{{variedad?.nombre}} </strong></li>  
+                        </p>
+                        
+                    </div>
+                   
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                Temperaturas
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
+              <div class="accordion-body">
+                  <div class="row ">
+                        <div class="ml-4 mb-3 col-3">
+                            <p><li><strong>Optima Máxima</strong></li>
+                                {{cultivos?.temperatura.optimaMax}}
+                            </p>
+                            <p><li><strong>Optima Mínima</strong></li>
+                                {{cultivos?.temperatura.optimaMin}}
+                            
+                            </p>
+                        </div>
+                        <div class="mb-3 col-4">
+                            <p><li><strong>Temp. Crecimiento Mínima</strong></li>
+                                {{cultivos?.temperatura.tempCrecimientoMin}}
+                            </p>
+                            <p><li><strong>Temp. Germinación Máxima</strong></li>
+                                {{cultivos?.temperatura.tempGerminacionMax}}
+                            </p>
+                        </div>
+                        <div class="mb-3 col-4">
+                            <p><li><strong>Temp. Germinación Mínima</strong></li>
+                                {{cultivos?.temperatura.tempGerminacionMin}}
+                            </p>
+                            <p><li><strong>Observaciones</strong></li>
+                                {{cultivos?.temperatura.observaciones}}
+                            </p>
+                        </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+        <!--SEMILLERO-->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+                Semillero
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSix">
+              <div class="accordion-body">
+                  <div class="row ">
+                        <div class="ml-4 mb-2 col-3">
+                            <p><li><strong>Cant. semillas máximas</strong></li>
+                                {{cultivos?.semillero.cantidadSemillasMax}}
+                            </p>
+                        </div>
+                        <div class="mb-2 col-4">
+                            <p><li><strong>Cant. semillas mínimas</strong></li>
+                                {{cultivos?.semillero.cantidadSemillasMin}}
+                            </p>
+                        </div>
+                        <div class="mb-2 col-3">
+                            <p><li><strong>Días transplante</strong></li>
+                                {{cultivos?.semillero.diasTransplante}}
+                            </p>
+                            
+                        </div>
+                        <div class=" ml-4 mb-3 col-5">
+                            <p><li><strong>Recomendaciones</strong></li>
+                                {{cultivos?.semillero.recomendaciones}}
+                            </p>
+                        
+                        </div>
+                        <div class="ml-4 mb-3 col-5">
+                           
+                            <p><li><strong>Observaciones</strong></li>
+                                {{cultivos?.semillero.observaciones}}
+                            </p>
+                        </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+        <!--Preparacion del Terreno-->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingEight">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false" aria-controls="panelsStayOpen-collapseEight">
+                Preparación del Terreno
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingEight">
+              <div class="accordion-body">
+                  <div class="row ">
+                        <div class="ml-4 mb-3 col-6">
+                            <p><li><strong>Profundidad</strong></li>
+                                {{cultivos?.preparacionTerreno.profundidad}}
+                            </p>
+                        </div>
+                        <div class="ml-4 mb-3 col-9">
+                            <p><li><strong>Observaciones</strong></li>
+                                {{cultivos?.preparacionTerreno.observaciones}}
+                            
+                            </p>
+                        </div>
+                        <div class="ml-4 mb-3 col-9">
+                            <p><li><strong>Proceso</strong></li>
+                                {{cultivos?.preparacionTerreno.proceso}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Plantación-->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingNine">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseNine" aria-expanded="false" aria-controls="panelsStayOpen-collapseNine">
+                Plantación
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseNine" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingNine">
+              <div class="accordion-body">
+                  <div class="row ">
+                        <div class="ml-4 mb-3 col-4">
+                            <p><li><strong>Densidad siembra max.</strong></li>
+                                {{cultivos?.plantacion.densidadSiembraMax}}
+                            </p>
+                            <p><li><strong>Densidad siembra min.</strong></li>
+                                {{cultivos?.plantacion.densidadSiembraMin}}
+                            </p>
+                            
+                        </div>
+                        <div class="ml-2 mb-3 col-4">
+                            <p><li><strong>Hileras surcos</strong></li>
+                                {{cultivos?.plantacion.hilerasSurco}}
+                            </p>
+                            <p><li><strong>Distancia surcos</strong></li>
+                                {{cultivos?.plantacion.distanciaSurcos}}
+                            </p>
+                        </div>
+                        <div class="ml-2 mb-3 col-3">
+                            <p><li><strong>Distancia plantas</strong></li>
+                                {{cultivos?.plantacion.distanciaPlantas}}
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Asociación-->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTen" aria-expanded="false" aria-controls="panelsStayOpen-collapseTen">
+                Asociación
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTen" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTen">
+              <div class="accordion-body">
+                  <div class="row ">
+                        <div class="ml-4 mb-3 col-5">
+                            <p><li><strong>Buena asociación</strong></li>
+                                {{cultivos?.buenaAsociacion}}
+                            </p>
+                        </div>
+                        <div class="ml-4 mb-3 col-6">
+                            <p><li><strong>Mala asociación</strong></li>
+                                {{cultivos?.malaAsociacion}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Recolección-->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingEleven">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEleven" aria-expanded="false" aria-controls="panelsStayOpen-collapseEleven">
+                Recolección
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseEleven" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingEleven">
+              <div class="accordion-body">
+                  <div class="row ">
+                        <div class="ml-4 mb-3 col-2">
+                            <p><li><strong>Desde </strong></li>
+                                {{cultivos?.recoleccion.desde}}
+                            </p>
+                        </div>
+                        <div class="ml-2 mb-3 col-2">
+                            <p><li><strong>Hasta</strong></li>
+                                {{cultivos?.recoleccion.hasta}}
+                            </p>
+                        </div>
+                        <div class="ml-2 mb-3 col-5">
+                            <p><li><strong>Obervaciones</strong></li>
+                                {{cultivos?.recoleccion.observaciones}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Almacenamiento-->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwelve">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwelve" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwelve">
+                Almacenamiento
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwelve" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwelve">
+              <div class="accordion-body">
+                  <div class="row ">
+                        <div class="ml-4 mb-3 col-2">
+                            <p><li><strong>Temperatura mínima</strong></li>
+                                {{cultivos?.almacenamiento.tempMin}}
+                            </p>
+                        </div>
+                        <div class="ml-3 mb-3 col-2">
+                            <p><li><strong>Temperatura máxima</strong></li>
+                                {{cultivos?.almacenamiento.tempMax}}
+                            </p>
+                        </div>
+                        <div class="ml-3 mb-3 col-6">
+                            <p><li><strong>Observaciones</strong></li>
+                                {{cultivos?.almacenamiento.observaciones}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Producción-->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThirteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThirteen" aria-expanded="false" aria-controls="panelsStayOpen-collapseThirteen">
+                Producción
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThirteen" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThirteen">
+              <div class="accordion-body">
+                  <div class="row ">
+                        <div class="ml-4 mb-3 col-2">
+                            <p><li><strong>Producción mínima</strong></li>
+                                {{cultivos?.produccionPromedio.produccionMin}}
+                            </p>
+                        </div>
+                        <div class="ml-3 mb-3 col-2">
+                            <p><li><strong>Producción máxima</strong></li>
+                                {{cultivos?.produccionPromedio.produccionMax}}
+                            </p>
+                        </div>
+                        <div class="ml-3 mb-3 col-6">
+                            <p><li><strong>Observaciones</strong></li>
+                                {{cultivos?.almacenamiento.observaciones}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Valor Nutricional-->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFourteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFourteen" aria-expanded="false" aria-controls="panelsStayOpen-collapseFourteen">
+                Valor nutricional
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFourteen" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFourteen">
+              <div class="accordion-body">
+                  <div class="row ">
+                        <div class="ml-4 mb-3 col-2">
+                            <p><li><strong>Calorías</strong></li>
+                                {{cultivos?.valorNutricional.calorias}}
+                            </p>
+                            
+                        </div>
+                        <div class="ml-3 mb-3 col-2">
+                            <p><li><strong>Carbohidratos</strong></li>
+                                {{cultivos?.valorNutricional.carboidratos}}
+                            </p>
+                        </div>
+                        <div class="ml-3 mb-3 col-2">
+                            <p><li><strong>Proteínas</strong></li>
+                                {{cultivos?.valorNutricional.proteinas}}
+                            </p>
+                        
+                        </div>
+                        <div class="ml-3 mb-3 col-4">
+                            
+                            <p><li><strong>Observaciones</strong></li>
+                                {{cultivos?.valorNutricional.observaciones}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--Suelo-->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFifteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFifteen" aria-expanded="false" aria-controls="panelsStayOpen-collapseFifteen">
+                Suelo
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFifteen" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFifteen">
+              <div class="accordion-body">
+                  <div class="row ">
+                        <div class="ml-4 mb-3 col-5">
+                            <p><li><strong>Ph Máximo</strong></li>
+                                {{cultivos?.suelo.phMax}}
+                            </p>
+                        </div>
+                        <div class="ml-4 mb-3 col-5">
+                            <p><li><strong>Ph Mínimo</strong></li>
+                                {{cultivos?.suelo.phMin}} 
+                     
+                            </p>
+                        </div>
+                        <div class="ml-4 mb-3 col-8">
+                            <p><li><strong>Obervaciones</strong></li>
+                                {{cultivos?.suelo.observaciones}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Epoca Siembra-->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingSixteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSixteen" aria-expanded="false" aria-controls="panelsStayOpen-collapseSixteen">
+                Epoca siembra
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseSixteen" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSixteen">
+              <div class="accordion-body">
+                  <div class="row ">
+                        <div class="ml-4 mb-3 col-5">
+                            <p><li><strong>Época principal</strong></li>
+                                {{cultivos?.epocaSiembra.epocaPrincipal}}
+                            </p>
+                        </div>
+                        <div class="ml-4 mb-3 col-6">
+                            <p><li><strong>Observaciones</strong></li>
+                                {{cultivos?.epocaSiembra.observaciones}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

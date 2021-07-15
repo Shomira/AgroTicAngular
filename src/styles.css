@@ -21,15 +21,12 @@
     background-color: rgb(77, 38, 53);
   }
 .lineaIzquierda{
-    border-left: 6px solid rgb(22, 128, 31);
-    border-bottom: 1px solid rgb(190, 216, 160);
-    background-color: rgb(215, 247, 185);
+    border-left: 6px solid #004170;
+    border-bottom: 1px solid rgb(160, 180, 216);
+    background-color: rgb(185, 202, 247);
     margin-bottom: 1.5em;
 }
-.principalV h5{
-    color: #4e4c4c;
-    
-}
+
 .principalV .row .rounded{
     align-content: center;
 }
@@ -40,3 +37,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 */
+/*Estuilos para el boton regresar*/
+.aBtnRegresar{
+  text-decoration: none;
+  color: white;
+}
+.btnRegresarItems{
+
+  margin-bottom: 0.5em;
+}
+/*Estuilos para subtitulos*/
+.lineaIzquierdaSub, .lineaIzquierdaSubCultivo {
+  border-left: 6px solid #4d4c4c;
+  border-bottom: 1px solid #a7a6a5;
+  background-color: rgb(204, 204, 204);
+  margin-bottom: 1em;
+}
+.lineaIzquierdaSub{
+  width: 75%;
+}
+.principalVSub .row .rounded{
+  align-content: center;
+}

@@ -26,36 +26,6 @@ export class CatalogoComponent implements OnInit {
     this.readCatalogos();
   }
 
-  agregarCatalogo(){
-
-    // validacion de los campos llenados
-    this.submitted = true;
-    if(this.crearCatalogo.invalid){
-      return;
-    }
-    const catalogo: any= {
-      nombre: this.crearCatalogo.value.nombre,
-      descripcion: this.crearCatalogo.value.descripcion,
-      // fecha del sistema
-      fechaCreacion: new Date(),
-      fechaActualizacion : new Date()
-
-
-    }
-    console.log(catalogo);
-    /* Creacion de catalogo a traves de la API
-    this.catalogoService.create(catalogo)
-      .subscribe(
-        response => {
-          console.log(response);
-          this.submitted = true;
-        },
-        error => {
-          console.log(error);
-        });
-    */
-  }
-
   readCatalogos(): void {
     this.catalogoService.readAll()
       .subscribe(data => {

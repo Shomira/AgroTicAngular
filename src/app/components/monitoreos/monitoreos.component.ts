@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MonitoreoGeneralService } from 'src/app/services/monitoreo-general.service';
 
 @Component({
@@ -10,10 +11,16 @@ export class MonitoreosComponent implements OnInit {
 
   monitoreos: any [] = [];
 
-  constructor(private monitoreoGeneralService: MonitoreoGeneralService) { }
+  constructor(private monitoreoGeneralService: MonitoreoGeneralService,
+              private aRoute: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.readMonitoreos();
+  }
+
+  elegirPlanta(value:String){
+    this.router.navigate(['/monitoreo-general', value]);
   }
 
   readMonitoreos(): void {

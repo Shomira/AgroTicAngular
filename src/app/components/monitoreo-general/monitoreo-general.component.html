@@ -41,8 +41,8 @@
                             <legend>Datos analisis del suelo</legend>
                             <div class="row">
                                 <div class="mb-3 col-4 ">
-                                    <label for="porcentaje_mo">Porcentaje MO</label>
-                                    <input type="number" class="form-control w-75" id="porcentaje_mo" placeholder="Porcentaje MO" formControlName="porcentajeMo">
+                                    <label for="MO_porcent">Porcentaje MO</label>
+                                    <input type="number" class="form-control w-75" id="MO_porcent" placeholder="Porcentaje MO" formControlName="moPorcent">
                                 </div>
                                 <div class="mb-3 col-4">
                                     <label for="ph_suelo">Ph del suelo</label>
@@ -50,15 +50,15 @@
                                 </div>
                                 <div class="mb-3 col-4">
                                     <label for="porcent_nitrogeno">Porcentaje Nitrogeno</label>
-                                    <input type="number" class="form-control w-75" id="porcent_nitrogeno" placeholder="Porcentaje Nitrogeno" formControlName="porcentNitrogeno">
+                                    <input type="number" class="form-control w-75" id="porcent_nitrogeno" placeholder="Porcentaje Nitrogeno" formControlName="nitrogenoPorcent">
                                 </div>
                                 <div class="mb-3 col-4">
                                     <label for="fosforo">Fosforo mg_hg </label>
-                                    <input type="number" class="form-control w-75" id="fosforo" placeholder="Fosforo mg_hg" formControlName="fosforo">
+                                    <input type="number" class="form-control w-75" id="fosforo" placeholder="Fosforo mg_hg" formControlName="fosforoMgHg">
                                 </div>
                                 <div class="mb-3 col-4">
                                     <label for="potasio">Potasio Cmol Kg</label>
-                                    <input type="number" class="form-control w-75" id="potasio" placeholder="Potasio Cmol Kg" formControlName="potasio">
+                                    <input type="number" class="form-control w-75" id="potasio" placeholder="Potasio Cmol Kg" formControlName="potasioCmolKg">
                                 </div>
                                 <div class="mb-3 col-4">
                                     <label for="otros_elementos">Otros Elementos</label>
@@ -72,23 +72,19 @@
                             <div class="row ">
                                 <div class="mb-3 col-4">
                                     <label for="temperatura">Temperatura Celsius</label>
-                                    <input type="number" class="form-control w-75"  id="temperatura" placeholder="Temperatura Celsius" formControlName="temperatura">
+                                    <input type="number" class="form-control w-75"  id="temperatura" placeholder="Temperatura Celsius" formControlName="temperaturaCelsius">
                                 </div>
                                 <div class="mb-3 col-4">
                                     <label for="humedad_relativa">Humedad relativa (%)</label>
-                                    <input type="number" class="form-control w-75"  id="humedad_relativa" placeholder="Porcentaje Humedad relativa" formControlName="humedadRelativa">
+                                    <input type="number" class="form-control w-75"  id="humedad_relativa" placeholder="Porcentaje Humedad relativa" formControlName="humedadRelativaPorcent">
                                 </div>
                                 <div class="mb-3 col-4">
                                     <label for="riego_lluvia">Riego lluvia (ml)</label>
-                                    <input type="number" class="form-control w-75" id="riego_lluvia" placeholder="Riego lluvia (ml) planta" formControlName="riegoLluvia">
-                                </div>   
-                                <div class="mb-3 col-4">
-                                    <label for="observaciones">Observaciones</label>
-                                    <textarea formControlName="observaciones" id="observaciones" cols="30" rows="10"></textarea>
+                                    <input type="number" class="form-control w-75" id="riego_lluvia" placeholder="Riego lluvia (ml) planta" formControlName="riegoLluviaMlPlanta">
                                 </div>
                                 <div class="mb-3 col-4">
-                                    <label for="usuario">Usuario</label>
-                                    <select class="form-control w-75"  formControlName="usuario" id="usuario"></select>
+                                    <label for="observaciones">Observaciones</label>
+                                    <textarea class="form-control"  formControlName="observaciones" id="observaciones" cols="30" rows="5" placeholder="Observaciones"></textarea>
                                 </div>
                             </div>
                             <div class="mb-3 col-6">

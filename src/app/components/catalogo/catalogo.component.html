@@ -11,14 +11,11 @@
     <section class="card">
         <section class="card-body">
             <span class="h3">Listado de Catálogos</span>
-            <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modalAgregar">Agregar</button>
             <table class="table table-striped mt-4">
                 <thead>
                   <tr>
                     <th>Nombre</th>
                     <th>Descripción</th>
-                    <th></th>
-                    <th></th>
                     <th></th>
                   </tr>
                 </thead>
@@ -27,40 +24,9 @@
                     <td>{{catalogo.nombre}}</td>
                     <td>{{catalogo.descripcion}}</td>
                     <td><button class="btn btn-secondary" [routerLink]="['/items-catalogo/', catalogo.id]">Ver</button></td>
-                    <td><i class="fas fa-edit fa-lg text-info"></i></td>
-                    <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
                   </tr>
                 </tbody>
             </table>
         </section>
     </section>
 </section>
-<!-- Modal Crear Catálogo-->
-<div class="modal fade" id="modalAgregar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div  class="modal-header modalHeader">
-                <h5 class="modal-title"  id="exampleModalLabel">Nuevo Catálogo</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="" method="POST" [formGroup]="crearCatalogo" (ngSubmit)="agregarCatalogo()">
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input id="nombre" type="text" class="form-control" formControlName="nombre" placeholder="Nombre" autocomplete="name" autofocus required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="descripcion" class="form-label">Descripción</label>
-                        <textarea formControlName="descripcion" id="descripcion" class="form-control" rows="3" cols="10" placeholder="Descripción" required></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary ml-3">Guardar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>

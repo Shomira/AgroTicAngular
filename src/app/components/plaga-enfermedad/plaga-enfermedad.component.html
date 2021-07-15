@@ -32,7 +32,6 @@
                         <td><i class="fas fa-edit fa-lg text-info"></i></td>
                         <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
                     </tr>
-          
                 </tbody>
             </table>
         </section>
@@ -53,16 +52,30 @@
                 <span *ngIf =" submitted && crearPlagaEnfermedad.invalid" class="badge badge-danger" >
                     Todos los campos son Obligatorios
                 </span>
-                <form action=''  [formGroup]=crearPlagaEnfermedad (ngSubmit)=agregarPlagaEnfermedad()>
+                <form [formGroup]=crearPlagaEnfermedad (ngSubmit)=agregarPlagaEnfermedad()>
                     <div class="modal-body">
                         <label for=""> Nombre</label>
-                        <input formControlName="nombreComun" class="form-control " type="text">
+                        <input formControlName="nombre" class="form-control " type="text">
+                        <div *ngIf =" submitted && crearPlagaEnfermedad.invalid">
+                            <span *ngIf ="nombre!.errors?.maxlength != undefined " class="badge badge-danger" >
+                                Tamaño maximo 10
+                            </span>
+                            <span *ngIf ="nombre!.errors?.required" class="badge badge-danger" >
+                                Por favor ingrese el nombre
+                            </span>
+                        </div>
+                        
                         <label for=""> Nombre Científico</label>
                         <input formControlName="nombreCientifico" class="form-control " type="text">
+                        <div *ngIf =" submitted && crearPlagaEnfermedad.invalid">
+                            <span *ngIf ="nombreCientifico!.errors?.required" class="badge badge-danger" >
+                                Por favor ingrese el nombre científico
+                            </span>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="submit"  class="btn btn-primary">Aceptar</button>
+                        <button type="submit" class="btn btn-primary">Aceptar</button>
                     </div>
                 </form>
             </div>

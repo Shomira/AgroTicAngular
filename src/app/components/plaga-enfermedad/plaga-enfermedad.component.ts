@@ -14,7 +14,7 @@ export class PlagaEnfermedadComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private plagaEnfermedad: PlagaEnfermedadService) {
     this.crearPlagaEnfermedad = this.fb.group({
-      nombreComun: ['', Validators.required],
+      nombre: ['', [Validators.required, Validators.maxLength(10)]],
       nombreCientifico:  ['', Validators.required],
 
     })
@@ -23,12 +23,14 @@ export class PlagaEnfermedadComponent implements OnInit {
 
   ngOnInit(): void {
     this.readPlagasEnfermedades();
+    
   }
 
   agregarPlagaEnfermedad(){
 
     // validacion de los campos llenados
     this.submitted = true;
+    
     if(this.crearPlagaEnfermedad.invalid){
       return;
     }
@@ -36,36 +38,23 @@ export class PlagaEnfermedadComponent implements OnInit {
       nombre: this.crearPlagaEnfermedad.value.nombre,
       nombreCientifico: this.crearPlagaEnfermedad.value.nombreCientifico,
       // fecha del sistema
-      fechaCreacion: new Date(),
-      fechaActualizacion : new Date()
+      // fechaCreacion: new Date(),
+      // fechaActualizacion : new Date()
 
     }
     
-   // console.log(this.crearPlagaEnfermedad);
-    console.log(plagaEnfermedad);
-
     this.plagaEnfermedad.create(plagaEnfermedad)
       .subscribe(
         response => {
           console.log(response);
           this.submitted = true;
+          location.reload();
         },
         error => {
           console.log(error);
         });
   }
-/*
-  readPlagasEnfermedades(): void {
-    this.plagaEnfermedad.readAll()
-      .subscribe(
-        plagasEnfermedades => {
-          this.plagasEnfermedades = this.plagasEnfermedades;
-          console.log(plagasEnfermedades);
-        },
-        error => {
-          console.log(error);
-        });
-  }*/
+
   readPlagasEnfermedades(): void {
     this.plagaEnfermedad.readAll()
       .subscribe(data => {
@@ -84,4 +73,8 @@ export class PlagaEnfermedadComponent implements OnInit {
           console.log(error);
         });
   }
+
+  get nombre() { return this.crearPlagaEnfermedad.get('nombre'); }
+  get nombreCientifico() { return this.crearPlagaEnfermedad.get('nombreCientifico'); }
+
 }

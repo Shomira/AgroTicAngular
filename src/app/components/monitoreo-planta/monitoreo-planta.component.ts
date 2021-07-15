@@ -10,7 +10,9 @@ import { MonitoreoPlantaService } from 'src/app/services/monitoreo-planta.servic
 export class MonitoreoPlantaComponent implements OnInit {
   crearMonitoreoPlanta: FormGroup;
   submitted = false;
-  monitoreoPlantas: any;
+  monitoreosPlantas: any;
+  fertilizantes: any;
+  controles_plagas_enfermedades: any;
 
   constructor(private fb: FormBuilder, private monitoreoPlantaService: MonitoreoPlantaService) {
     this.crearMonitoreoPlanta = this.fb.group({
@@ -47,7 +49,7 @@ export class MonitoreoPlantaComponent implements OnInit {
     })
   }
   ngOnInit(): void {
-    this.readMonitoreoPlantas();
+    
   }
 
 
@@ -59,42 +61,41 @@ export class MonitoreoPlantaComponent implements OnInit {
     if(this.crearMonitoreoPlanta.invalid){
       return;
     }
-    const MonitoreoPlanta: any= {
+    const monitoreoPlanta: any= {
       // Datos fenologicos del cultivo
-      altura: this.crearMonitoreoPlanta.value.altura,
-      diametro: this.crearMonitoreoPlanta.value.diametro,
-      numRacimosPlanta: this.crearMonitoreoPlanta.value.numRacimosPlanta,
-      numFloresPlanta: this.crearMonitoreoPlanta.value.numFloresPlanta,
-      numFrutosPlanta: this.crearMonitoreoPlanta.value.numFrutosPlanta,
-      numFrutosRacimo: this.crearMonitoreoPlanta.value.numFrutosRacimo,
+      alturaCm: this.crearMonitoreoPlanta.value.altura,
+      diametroCm: this.crearMonitoreoPlanta.value.diametro,
+      nroRacimos: this.crearMonitoreoPlanta.value.numRacimosPlanta,
+      nroFloresTotalesPlanta: this.crearMonitoreoPlanta.value.numFloresPlanta,
+      nroFrutosTotalesPlanta: this.crearMonitoreoPlanta.value.numFrutosPlanta,
+      nroFrutosRacimo: this.crearMonitoreoPlanta.value.numFrutosRacimo,
        
-      numFloresRacimo: this.crearMonitoreoPlanta.value.numFloresRacimo,      
-      longitudFruto: this.crearMonitoreoPlanta.value.longitudFruto,
-      diametroFruto: this.crearMonitoreoPlanta.value.diametroFruto,    
-      pesoFruto: this.crearMonitoreoPlanta.value.pesoFruto,
-      produccionPlanta: this.crearMonitoreoPlanta.value.produccionPlanta,
+      nroFloresRacimo: this.crearMonitoreoPlanta.value.numFloresRacimo,      
+      longitudFrutoCm: this.crearMonitoreoPlanta.value.longitudFruto,
+      diametroFrutoCm: this.crearMonitoreoPlanta.value.diametroFruto,    
+      pesoFrutoG: this.crearMonitoreoPlanta.value.pesoFruto,
+      produccionPlantaKg: this.crearMonitoreoPlanta.value.produccionPlanta,
       //Aplicacion Fertitlizante
 
-      cantidadF: this.crearMonitoreoPlanta.value.cantidadF,
-      fechaF: this.crearMonitoreoPlanta.value.fechaF,
+      cantFertilizanteGplanta: this.crearMonitoreoPlanta.value.cantidadF,
+      fechaFertilizante: this.crearMonitoreoPlanta.value.fechaF,
       // producto control plaga Enfermedad
       controlPlagaEnfermedad: this.crearMonitoreoPlanta.value.controlPlagaEnfermedad,
-      cantidadProducto: this.crearMonitoreoPlanta.value.cantidadCP,
-      fechaAplicacion: this.crearMonitoreoPlanta.value.fechaAplicacion,
+      cantProductoPlEn: this.crearMonitoreoPlanta.value.cantidadCP,
+      fechaProductoPlEn: this.crearMonitoreoPlanta.value.fechaAplicacion,
    
       //Relacion Externa 
-      planta: this.crearMonitoreoPlanta.value.planta,
       monitoreoGeneral: this.crearMonitoreoPlanta.value.monitoreoGeneral,
       fertilizante: this.crearMonitoreoPlanta.value.fertilizante,
       // Fecha del sistema
-      fechaCreacion: new Date(),
-      fechaActualizacion : new Date()
-
+      //fechaCreacion: new Date(),
+      //fechaActualizacion : new Date()
 
     }
-    console.log(MonitoreoPlanta);
-    /* Creacion de Monitoreo Planta a traves de la API
-    this.monitoreoPlantaService.create(MonitoreoPlanta)
+    console.log(monitoreoPlanta);
+
+    //Creacion de Monitoreo Planta a traves de la API
+    this.monitoreoPlantaService.create(monitoreoPlanta)
       .subscribe(
         response => {
           console.log(response);
@@ -103,18 +104,30 @@ export class MonitoreoPlantaComponent implements OnInit {
         error => {
           console.log(error);
         });
-    */
-
   }
+  // Esta funcion no va aquí
   readMonitoreoPlantas(): void {
     this.monitoreoPlantaService.readAll()
       .subscribe(
-          monitoreoPlantas => {
-          this.monitoreoPlantas = monitoreoPlantas;
-          console.log(monitoreoPlantas);
+          monitoreosPlantas => {
+          this.monitoreosPlantas = monitoreosPlantas;
+          console.log(monitoreosPlantas);
         },
         error => {
           console.log(error);
         });
   }
+
+  readDatos(): void {
+    this.monitoreoPlantaService.readAll()
+      .subscribe(
+          monitoreosPlantas => {
+          this.monitoreosPlantas = monitoreosPlantas;
+          console.log(monitoreosPlantas);
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
 }

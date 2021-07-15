@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MonitoreoGeneralService } from 'src/app/services/monitoreo-general.service';
+import { PlantaService } from 'src/app/services/planta.service';
 
 @Component({
   selector: 'app-monitoreo-general',
@@ -11,9 +13,15 @@ export class MonitoreoGeneralComponent implements OnInit {
 
   crearMonitoreoGeneral: FormGroup;
   submitted = false;
-  monitoreosGenerales: any [] = [];
+  id: string | null;
+  planta: any;
 
-  constructor(private fb: FormBuilder, private monitoreoGeneralService: MonitoreoGeneralService) {
+  constructor(private fb: FormBuilder, 
+              private monitoreoGeneralService: MonitoreoGeneralService, 
+              private plantaService: PlantaService,
+              private router: Router,
+              private aRoute: ActivatedRoute) {
+
     this.crearMonitoreoGeneral = this.fb.group({
       ubicacion: ['', Validators.required],
       lugarLote:  ['', Validators.required],
@@ -21,22 +29,27 @@ export class MonitoreoGeneralComponent implements OnInit {
       areaSembrada:  ['', Validators.required],
       germinacionPrendimiento: ['', Validators.required],
       // Datos de analisis del suelo
-      porcentajeMo:  ['', Validators.required],
+      moPorcent:  ['', Validators.required],
       phSuelo: ['', Validators.required],
-      porcentNitrogeno:  ['', Validators.required],
-      fosforo: ['', Validators.required],
-      potasio:  ['', Validators.required],
-      otrosElementos: ['', Validators.required],
-      temperatura:  ['', Validators.required],
-      humedadRelativa: ['', Validators.required],
-      riegoLluvia:  ['', Validators.required],
-      observaciones: ['', Validators.required],
-      usuario:  ['', Validators.required]
-    })
+      nitrogenoPorcent:  ['', Validators.required],
+      fosforoMgHg: ['', Validators.required],
+      potasioCmolKg:  ['', Validators.required],
+      temperaturaCelsius:  ['', Validators.required],
+      humedadRelativaPorcent: ['', Validators.required],
+      riegoLluviaMlPlanta:  ['', Validators.required],
+      otrosElementos: [''],
+      observaciones:  ['']
+    });
+
+    this.id = this.aRoute.snapshot.paramMap.get('id');
   }
 
   ngOnInit(): void {
-    
+    if (this.id != null){
+      this.plantaService.read(this.id).subscribe(data => {
+          this.planta = data;
+      });
+    }
   }
 
   agregarMonitoreoGneral(){
@@ -52,36 +65,33 @@ export class MonitoreoGeneralComponent implements OnInit {
       fechaMonitoreo: this.crearMonitoreoGeneral.value.fechaMonitoreo,
       areaSembrada: this.crearMonitoreoGeneral.value.areaSembrada,
       germinacionPrendimiento: this.crearMonitoreoGeneral.value.germinacionPrendimiento,
-      porcentajeMo: this.crearMonitoreoGeneral.value.porcentajeMo,
+      moPorcent: this.crearMonitoreoGeneral.value.moPorcent,
       phSuelo: this.crearMonitoreoGeneral.value.phSuelo,
-      porcentNitrogeno: this.crearMonitoreoGeneral.value.porcentNitrogeno,
-      fosforo: this.crearMonitoreoGeneral.value.fosforo,
-      potasio: this.crearMonitoreoGeneral.value.potasio,
+      nitrogenoPorcent: this.crearMonitoreoGeneral.value.nitrogenoPorcent,
+      fosforoMgHg: this.crearMonitoreoGeneral.value.fosforoMgHg,
+      potasioCmolKg: this.crearMonitoreoGeneral.value.potasioCmolKg,
       otrosElementos: this.crearMonitoreoGeneral.value.otrosElementos,
-      temperatura: this.crearMonitoreoGeneral.value.temperatura,
-      humedadRelativa: this.crearMonitoreoGeneral.value.humedadRelativa,
-      riegoLluvia: this.crearMonitoreoGeneral.value.riegoLluvia,
+      temperaturaCelsius: this.crearMonitoreoGeneral.value.temperaturaCelsius,
+      humedadRelativaPorcent: this.crearMonitoreoGeneral.value.humedadRelativaPorcent,
+      riegoLluviaMlPlanta: this.crearMonitoreoGeneral.value.riegoLluviaMlPlanta,
       observaciones: this.crearMonitoreoGeneral.value.observaciones,
-      usuario: this.crearMonitoreoGeneral.value.usuario,
+      planta: this.planta,
       // fecha del sistema
-      fechaCreacion: new Date(),
-      fechaActualizacion : new Date()
+      //fechaCreacion: new Date(),
+      //fechaActualizacion : new Date()
 
     }
-    console.log(monitoreoGeneral);
-    /* Creacion de monitoreo General a traves de la API
-    this.monitoreoGenralService.create(monitoreoGeneral)
+    //Creacion de monitoreo General a traves de la API
+    this.monitoreoGeneralService.create(monitoreoGeneral)
       .subscribe(
         response => {
           console.log(response);
           this.submitted = true;
+          this.router.navigate(['/monitoreos']);
         },
         error => {
           console.log(error);
         });
-    */
    
   }
-
-
 }
