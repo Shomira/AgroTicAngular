@@ -1,9 +1,6 @@
 <section style="background-color:#e9eae8;">
     
     <section class="container pt-4"  >
-        <button type="button" class="btn btn-primary">  
-            <a class="aBtnRegresar" href="javascript: history.go(-1)">Regresar</a>
-        </button>
         <h2 style="text-align: center;">Formulario de Monitoreo Planta</h2>
         <br>
         <section class="card">
@@ -31,7 +28,7 @@
                             </div>
                             <div class="mb-3 col-4">
                                 <label for="num_frutos_planta">Número de frutos por planta</label>
-                                <input type="text" class="form-control w-75" id="num_frutos_planta" formControlName="numFrutosPlanta" placeholder="Frutos por planta">
+                                <input type="number" class="form-control w-75" id="num_frutos_planta" formControlName="numFrutosPlanta" placeholder="Frutos por planta">
                             </div>
                             <div class="mb-3 col-4">
                                 <label for="num_flores_racimo">Número de flores por Racimo</label>
@@ -65,9 +62,9 @@
                         <div class="row "> 
                             <div class="mb-3 col-4">
                                 <label for="">Fertilizante</label>
-                                <select class="form-control w-75" formControlName="fertilizante" name="" id="">
-                                    <option value="" >1</option>
-                                    <option value="" >2</option>
+                                <select class="form-control w-75" formControlName="fertilizante">
+                                    <option value=""  disabled>--Fertilizante--</option>
+                                    <option *ngFor="let fertilizante of fertilizantes" value={{fertilizante.id}} >{{fertilizante.nombreItem}}</option>
                                 </select>
                             </div>
                             <div class="mb-3 col-4">
@@ -76,7 +73,7 @@
                             </div>
                             <div class="mb-3 col-4">
                                 <label for="fecha_f">Fecha </label>
-                                <input type="date" class="form-control w-75" id="fecha_f" formControlName="fechaF" placeholder="Fecha  fertilizante">
+                                <input type="date" class="form-control w-75" id="fecha_f" formControlName="fechaF" placeholder="Fecha fertilizante">
                             </div>
                         </div>
                     </fieldset>
@@ -86,9 +83,9 @@
                         <div class="row ">
                             <div class="mb-3 col-4">
                                 <label for="control_plaga_enfermedad">Control plaga enfermedad</label>
-                                <select class="form-control w-75" formControlName="controlPlagaEnfermedad" id="control_plaga_enfermedad">
-                                    <option value=""   >1</option>
-                                    <option value="" >2</option>
+                                <select class="form-control w-75" formControlName="controlPlagaEnfermedad">
+                                    <option value="" disabled>--Control plaga enfermedad--</option>
+                                    <option *ngFor="let control of controles_plagas_enfermedades" value={{control.id}} >{{control.nombreItem}}</option>
                                 </select>
                             </div>
                             <div class="mb-3 col-4">
@@ -105,7 +102,7 @@
                     <br>
                     <div class="mb-3 col-6">
                         <button type="submit" class="btn btn-primary">Guardar</button>
-                        <button type="button" class="btn btn-danger ml-5">Cancelar</button>
+                        <button type="button" class="btn btn-danger ml-5" routerLink="/monitoreos">Cancelar</button>
                     </div>
                 </form>
             </section>

@@ -15,15 +15,13 @@ import { VerCultivoComponent } from './components/ver-cultivo/ver-cultivo.compon
 const routes: Routes = [
   { path: '', redirectTo: 'menu', pathMatch: 'full' },
   { path: 'menu', component: MenuComponent },
-  
   { path: 'cultivos', component: CultivoComponent },
   { path: 'ver-cultivo/:id', component: VerCultivoComponent},
-
   { path: 'registro-cultivo', component: RegistrarCultivoComponent },
   { path: 'catalogos', component: CatalogoComponent},
   { path: 'items-catalogo/:id', component: ItemsCatalogoComponent},
   { path: 'monitoreo-general/:id', component: MonitoreoGeneralComponent},
-  { path: 'monitoreo-planta', component: MonitoreoPlantaComponent},
+  { path: 'monitoreo-planta/:id', component: MonitoreoPlantaComponent},
   { path: 'monitoreos', component: MonitoreosComponent},
   { path: 'planta', component: PlantaComponent},
   { path: 'plaga-enfermedad', component: PlagaEnfermedadComponent},
