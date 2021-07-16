@@ -22,7 +22,6 @@ export class PlantaComponent implements OnInit {
               private cultivoService: CultivoService,
               private variedadService: VariedadService) {
     this.crearPlanta = this.fb.group({
-      nombre: ['', Validators.required],
       variedad:  ['', Validators.required],
       cultivo:  ['', Validators.required],
       fechaSiembra:  ['', Validators.required]
@@ -41,30 +40,37 @@ export class PlantaComponent implements OnInit {
     if(this.crearPlanta.invalid){
       return;
     }
-    const Planta: any= {
-      nombre: this.crearPlanta.value.nombre,
-      variedad: this.crearPlanta.value.variedad,
-      cultivo: this.crearPlanta.value.cultivo,
+
+    for (let index = 0; index < this.cultivos.length; index++) {
+      if (this.crearPlanta.value.cultivo == this.cultivos[index].id) {
+        var cultivo = this.cultivos[index];
+      }
+    }
+    for (let index = 0; index < this.variedades.length; index++){
+      if(this.crearPlanta.value.variedad == this.variedades[index].id){
+        var variedad = this.variedades[index];
+      }
+    }
+
+    const planta: any= {
+      variedad: variedad,
+      cultivo: cultivo,
       fechaSiembra: this.crearPlanta.value.fechaSiembra,
       // fecha del sistema
-      fechaCreacion: new Date(),
-      fechaActualizacion : new Date()
-
-
+      //fechaCreacion: new Date(),
+      //fechaActualizacion : new Date()
     }
-    console.log(Planta);
-     /* Creacion de catalogo a traves de la API
+    //Creacion de catalogo a traves de la API
     this.plantaService.create(planta)
       .subscribe(
         response => {
           console.log(response);
           this.submitted = true;
+          location.reload();
         },
         error => {
           console.log(error);
         });
-
-*/
   }
 
   readDatos(): void {
@@ -90,7 +96,4 @@ export class PlantaComponent implements OnInit {
     });
   }
 
-  getVariedades(val: any){
-    console.log(val);
-  }
 }

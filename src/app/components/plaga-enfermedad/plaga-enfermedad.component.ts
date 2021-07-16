@@ -11,12 +11,12 @@ export class PlagaEnfermedadComponent implements OnInit {
   crearPlagaEnfermedad: FormGroup;
   submitted = false;
   plagasEnfermedades: any [] = [];
+  idEliminar: String = "";
 
-  constructor(private fb: FormBuilder, private plagaEnfermedad: PlagaEnfermedadService) {
+  constructor(private fb: FormBuilder, private plagaEnfermedadService: PlagaEnfermedadService) {
     this.crearPlagaEnfermedad = this.fb.group({
       nombre: ['', [Validators.required, Validators.maxLength(10)]],
       nombreCientifico:  ['', Validators.required],
-
     })
 
   }
@@ -43,7 +43,7 @@ export class PlagaEnfermedadComponent implements OnInit {
 
     }
     
-    this.plagaEnfermedad.create(plagaEnfermedad)
+    this.plagaEnfermedadService.create(plagaEnfermedad)
       .subscribe(
         response => {
           console.log(response);
@@ -56,25 +56,31 @@ export class PlagaEnfermedadComponent implements OnInit {
   }
 
   readPlagasEnfermedades(): void {
-    this.plagaEnfermedad.readAll()
+    this.plagaEnfermedadService.readAll()
       .subscribe(data => {
-        this.plagasEnfermedades = [];
-        //console.log(plagasEnfermedades);
-          data.forEach((element:any )=> {
-            this.plagasEnfermedades.push({
-              id: element.id,
-              ...element
-            })
-       
-          });
-     
-        },
-        error => {
-          console.log(error);
-        });
+        this.plagasEnfermedades = data;
+      },
+      error => {
+        console.log(error);
+      });
   }
 
   get nombre() { return this.crearPlagaEnfermedad.get('nombre'); }
   get nombreCientifico() { return this.crearPlagaEnfermedad.get('nombreCientifico'); }
+
+  getIdEliminar(id: String){
+    this.idEliminar = id;
+  }
+
+  eliminarPlagaEnfermedad(){
+    this.plagaEnfermedadService.delete(this.idEliminar)
+      .subscribe(data => {
+        console.log(data);
+        location.reload();
+      },
+      error => {
+        console.log(error);
+      });
+  }
 
 }
