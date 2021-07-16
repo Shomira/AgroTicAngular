@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CultivoService } from 'src/app/services/cultivo.service';
 import { PlantaService } from 'src/app/services/planta.service';
+import { VariedadService } from 'src/app/services/variedad.service';
 
 @Component({
   selector: 'app-planta',
@@ -12,8 +14,13 @@ export class PlantaComponent implements OnInit {
   crearPlanta: FormGroup;
   submitted = false;
   plantas: any[] = [];
+  cultivos: any[] = [];
+  variedades: any[] = [];
 
-  constructor(private fb: FormBuilder, private plantaService: PlantaService) {
+  constructor(private fb: FormBuilder, 
+              private plantaService: PlantaService,
+              private cultivoService: CultivoService,
+              private variedadService: VariedadService) {
     this.crearPlanta = this.fb.group({
       nombre: ['', Validators.required],
       variedad:  ['', Validators.required],
@@ -24,7 +31,7 @@ export class PlantaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.readPlantas();
+    this.readDatos();
   }
 
   agregarPlanta(){
@@ -59,22 +66,31 @@ export class PlantaComponent implements OnInit {
 
 */
   }
-  readPlantas(): void {
-    this.plantaService.readAll().subscribe(data => {
-      this.plantas= [];
-      data.forEach((element:any )=> {
-        this.plantas.push({
-          id: element.id,
-          variedad: element.variedad,
-          cultivo: element.cultivo,
-          ...element
-      
-        })
-      });
 
+  readDatos(): void {
+    this.plantaService.readAll().subscribe(data => {
+      this.plantas= data;
     },
     error => {
       console.log(error);
     });
+
+    this.cultivoService.readAll().subscribe(data => {
+      this.cultivos= data;
+    },
+    error => {
+      console.log(error);
+    });
+
+    this.variedadService.readAll().subscribe(data => {
+      this.variedades= data;
+    },
+    error => {
+      console.log(error);
+    });
+  }
+
+  getVariedades(val: any){
+    console.log(val);
   }
 }

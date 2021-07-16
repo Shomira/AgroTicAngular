@@ -45,7 +45,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Nueva Planta</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -54,10 +54,16 @@
                     <div class="modal-body">
                         <label for="" > Nombre</label>
                         <input  class="form-control " formControlName="nombre" type="text">
-                        <label for=""> Variedad</label>
-                        <input  class="form-control " formControlName="variedad" type="text">
-                        <label for=""> Cultivo</label>
-                        <input  class="form-control " formControlName="cultivo" type="text">
+                        <label for="cultivo"> Cultivo</label>
+                        <select name="cultivo" id="cultivo" class="form-control" formControlName="cultivo" (change)="getVariedades($event)">
+                            <option value="" disable >--Cultivo--</option>
+                            <option *ngFor="let cultivo of cultivos" value={{cultivo.id}} >{{cultivo.nombre}}</option>
+                        </select>
+                        <label for="variedad"> Variedad</label>
+                        <select name="variedad" id="variedad" class="form-control" formControlName="variedad" >
+                            <option value="" disable >--Variedad--</option>
+                            <option *ngFor="let variedad of variedades" value={{variedad.id}} >{{variedad.nombre}}</option>
+                        </select>
                         <label for=""> fecha Siembra</label>
                         <input  type= "date" class="form-control " formControlName="fechaSiembra" >
                     </div>

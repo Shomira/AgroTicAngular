@@ -37,8 +37,6 @@ export class CatalogoComponent implements OnInit {
             })
       
           });
-          console.log(this.catalogos);
-    
         },
         error => {
           console.log(error);

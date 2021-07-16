@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { CatalogoService } from 'src/app/services/catalogo.service';
 import { ItemsCatalogoService } from 'src/app/services/items-catalogo.service';
 
 @Component({
@@ -14,10 +15,12 @@ export class ItemsCatalogoComponent implements OnInit {
   submitted = false;
   itemsCatalogos: any [] = [];
   id: string | null;
+  catalogo: any;
 
   constructor(private fb: FormBuilder, 
               private itemsCatalogoService: ItemsCatalogoService,
-              private aRoute: ActivatedRoute ) {
+              private aRoute: ActivatedRoute,
+              private catalogoService: CatalogoService) {
     this.creatItemsCatalogo = this.fb.group({
       nombre: ['', Validators.required],
       codigo:  ['', Validators.required]
@@ -28,6 +31,11 @@ export class ItemsCatalogoComponent implements OnInit {
 
   ngOnInit(): void {
     this.readItemsCatalogos();
+    if (this.id != null){
+      this.catalogoService.read(this.id).subscribe(data => {
+          this.catalogo = data;
+      });
+    }
   }
 
   agregarItemsCatalogo(){
@@ -38,50 +46,36 @@ export class ItemsCatalogoComponent implements OnInit {
       return;
     }
     const ItemsCatalogo: any= {
-      nombre: this.creatItemsCatalogo.value.nombre,
+      nombreItem: this.creatItemsCatalogo.value.nombre,
       codigo: this.creatItemsCatalogo.value.codigo,
+      catalogo: this.catalogo,
       // fecha del sistema
-      fechaCreacion: new Date(),
-      fechaActualizacion : new Date()
-
-
+      // fechaCreacion: new Date(),
+      // fechaActualizacion : new Date()
     }
     console.log(ItemsCatalogo);
-    /* Creacion de Items de Catalogo a traves de la API
+    // Creacion de Items de Catalogo a traves de la API
     this.itemsCatalogoService.create(ItemsCatalogo)
       .subscribe(
         response => {
           console.log(response);
           this.submitted = true;
+          location.reload();
         },
         error => {
           console.log(error);
         });
-    */
-
   }
 
   readItemsCatalogos(){
     if (this.id != null) {
-      this.itemsCatalogoService.read(this.id).subscribe(data => {
+      this.itemsCatalogoService.readAll().subscribe(data => {
         this.itemsCatalogos = [];
-        // Un Item
-        if (Array.length <= 1) {
-          this.itemsCatalogos.push({
-            nombre: data.nombreItem,
-            id: data.id
-           })
-
-        // Varios Items
-        } else if (Array.length > 1)   {
-          data.forEach((element:any )=> {
-            this.itemsCatalogos.push({
-              id: data.id,
-              ...element
-            })
-
-          });
-        }
+        data.forEach((element:any )=> {
+          if(element.catalogo.id == this.id){
+            this.itemsCatalogos.push(element);
+          }
+        });
       });
       
     }

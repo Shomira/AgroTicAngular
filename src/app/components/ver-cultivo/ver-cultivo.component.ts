@@ -36,24 +36,15 @@ export class VerCultivoComponent implements OnInit {
        
       });
       
-  
       this.variedadesService.readAll().subscribe(data => {
         this.variedades = [];
-        
-        for (let index = 0; index < Array.length; index++) {
-          if (this.id == data[index].cultivo.id) {
-            data.forEach((element:any )=> {
-              this.variedades.push({
-                id: element.id,
-                ...element
-              })
-            });
+        data.forEach((element:any )=> {
+          if (this.id == element.cultivo.id){
+            this.variedades.push(element);
           }
-        }
-
+          
+        });
       });
-  
-      
     }
     
   }
