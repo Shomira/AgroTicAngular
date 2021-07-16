@@ -16,6 +16,8 @@ import { PlagaEnfermedadComponent } from './components/plaga-enfermedad/plaga-en
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { VerCultivoComponent } from './components/ver-cultivo/ver-cultivo.component';
+import { VerMonitoreoComponent } from './components/ver-monitoreo/ver-monitoreo.component';
+import { VerMonitoreoPlantaComponent } from './components/ver-monitoreo-planta/ver-monitoreo-planta.component';
 //import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -32,6 +34,8 @@ import { VerCultivoComponent } from './components/ver-cultivo/ver-cultivo.compon
     PlantaComponent,
     PlagaEnfermedadComponent,
     VerCultivoComponent,
+    VerMonitoreoComponent,
+    VerMonitoreoPlantaComponent,
     
   ],
   imports: [

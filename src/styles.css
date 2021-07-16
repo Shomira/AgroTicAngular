@@ -59,3 +59,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .principalVSub .row .rounded{
   align-content: center;
 }
+label, input, p{
+  font-size: 15px;
+}

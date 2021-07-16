@@ -1,39 +1,43 @@
-<section class="container pt-4">
-    <div class="lineaIzquierdaSub">
-        <div class=" container principalVSub">
-            <div class="row">  
-                <div class=" pb-3">
-                    <h5 class="text-black pt-3">ITEMS DE CATALOGO </h5>
+<section class="containerItemCatalogo">  
+    <section class="container pt-4">
+        <div class="lineaIzquierdaSub">
+            <div class=" container principalVSub">
+                <div class="row">  
+                    <div class=" pb-3">
+                        <h5 class="text-black pt-3">ITEMS DE CATALOGO </h5>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <button type="button" class="btn btn-primary btnRegresarItems">  
-        <a class="aBtnRegresar" href="javascript: history.go(-1)">Regresar</a>
-    </button>
-    <section class="card w-75 items">
-        <section class="card-body">
-            <span class="h3">Listado de Ítems</span>
-            <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modalAgregar">Agregar</button>
-            <table class="table table-striped mt-4">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Código</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let itemCatalogo of itemsCatalogos" >
-                        <td>{{itemCatalogo.nombreItem}}</td>
-                        <td>{{itemCatalogo.id}}</td>
-                        <td><i class="fas fa-edit fa-lg text-info"></i></td>
-                        <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
-                    </tr>
-                  
-                </tbody>
-            </table>
+        <button type="button" class="btn btn-primary btnRegresarItems">  
+            <a class="aBtnRegresar" href="javascript: history.go(-1)">Regresar</a>
+        </button>
+        <section class="card w-75 items">
+            <section class="card-body">
+                <span class="h3">Listado de Ítems</span>
+                <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modalAgregar">Agregar</button>
+                <table class="table table-striped mt-4">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Código</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let itemCatalogo of itemsCatalogos">
+                            <td>{{itemCatalogo.id}}</td>
+                            <td>{{itemCatalogo.nombreItem}}</td>
+                            <td>--------</td>
+                            <td><i class="fas fa-edit fa-lg text-info"></i></td>
+                            <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            </section>
         </section>
     </section>
 </section>

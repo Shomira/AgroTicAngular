@@ -1,0 +1,115 @@
+<section style="background-color:#e9eae8;">
+    
+    <section class="container pt-4"  >
+        <h2 style="text-align: center; color: black;">Ficha Monitoreo Planta</h2>
+        <br>
+        <button type="button" class="btn btn-primary">  
+            <a class="aBtnRegresar" [routerLink]="['/ver-monitoreo/', monitoreoP.monitoreoGeneral.id]" >Regresar</a>
+        </button>
+        &nbsp;
+        <button type="button" class="btn btn-success">  
+            <a class="aBtnRegresar" routerLink= '/monitoreos' >Monitoreos</a>
+        </button>
+        <br>
+        <br>
+        <section class="card">
+            <section class="card-body" >  
+                <form action=""  >
+                    
+                    <fieldset>
+                        <legend> <strong> Datos Fenológicos del cultivo</strong></legend>
+                        <div class="row ">
+                            <div class="mb-3 col-4">
+                                <label for="altura">Altura</label>
+                                <input class="form-control w-75" value={{monitoreoP?.alturaCm}} disabled >
+                   
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label for="diametro">Diametro</label>
+                                <input class="form-control w-75" value={{monitoreoP?.diametroCm}} disabled >
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label for="num_racimos_planta">Número de racimos por planta</label>
+                                <input class="form-control w-75" value={{monitoreoP?.nroRacimos}} disabled >
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label for="num_flores_planta">Número de flores por planta </label>
+                                <input class="form-control w-75" value={{monitoreoP?.nroFloresTotalesPlanta}} disabled  >
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label for="num_frutos_planta">Número de frutos por planta</label>
+                                <input class="form-control w-75" value={{monitoreoP?.nroFrutosTotalesPlanta}} disabled>
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label for="num_flores_racimo">Número de flores por Racimo</label>
+                                <input class="form-control w-75" value={{monitoreoP?.nroFloresRacimo}} disabled >
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label for="num_frutos_racimo">Número de frutos por racimo</label>
+                                <input class="form-control w-75" value={{monitoreoP?.nroFrutosRacimo}} disabled  >
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label for="longitud_fruto">Longitud del fruto(cm)</label>
+                                <input class="form-control w-75" value={{monitoreoP?.longitudFrutoCm}} disabled >
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label for="diametro_fruto">Diametro del fruto(cm)</label>
+                                <input class="form-control w-75" value={{monitoreoP?.diametroFrutoCm}} disabled >
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label for="peso_fruto">Peso del fruto(g)</label>
+                                <input class="form-control w-75"  value={{monitoreoP?.pesoFrutoG}} disabled >
+                            </div>   
+                            <div class="mb-3 col-4">
+                                <label for="produccion_planta">Producción por planta(kg)</label>
+                                <input class="form-control w-75" value={{monitoreoP?.produccionPlantaKg}} disabled>
+                            </div>  
+                        </div>
+                    </fieldset>
+                    <hr>
+                    <fieldset>
+                        <legend><strong> Aplicación Fertilizante</strong></legend>
+                        <div class="row "> 
+                            <div class="mb-3 col-4">
+                                <label for="produccion_planta">Nombre fertilizante</label>
+                                <input class="form-control w-75" value={{monitoreoP?.fertilizante.nombreItem}} disabled>
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label for="cantidad_f">Cantidad</label>
+                                <input class="form-control w-75" value={{monitoreoP?.cantFertilizanteGplanta}} disabled>
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label for="fecha_f">Fecha </label>
+                                <input class="form-control w-75" value={{monitoreoP?.fechaFertilizante}} disabled>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <hr>
+                    <fieldset>
+                        <legend><strong> Producto Control Plaga Enfermedades</strong></legend>
+                        <div class="row ">
+                            <div class="mb-3 col-4">
+                                <label for="control_plaga_enfermedad">Control plaga enfermedad</label>
+                                <input class="form-control w-75" value={{monitoreoP?.fechaFertilizante}} disabled>
+                            </div>
+                            <div class="mb-3 col-4">
+                                <label for="cantidad_producto">Cantidad </label>
+                                <input class="form-control w-75" value={{monitoreoP?.fechaFertilizante}} disabled>
+                            </div>   
+                            <div class="mb-3 col-4">
+                                <label for="fecha_aplicacion">Fecha de aplicación</label>
+                                <input class="form-control w-75" value={{monitoreoP?.fechaFertilizante}} disabled>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <br>
+                 
+                </form>
+            </section>
+        </section>
+    </section>
+ 
+
+</section>
+
