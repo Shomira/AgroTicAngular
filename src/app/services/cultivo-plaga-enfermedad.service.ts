@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-const baseURL = 'http://127.0.0.1:8081/cultivos_plagas_enfermedades';
+const baseURL = 'http://localhost:8081/cultivos_plagas_enfermedades';
 
 @Injectable({
   providedIn: 'root'

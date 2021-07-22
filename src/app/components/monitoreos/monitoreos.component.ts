@@ -10,6 +10,7 @@ import { MonitoreoGeneralService } from 'src/app/services/monitoreo-general.serv
 export class MonitoreosComponent implements OnInit {
 
   monitoreos: any [] = [];
+  idEliminar: String = "";
 
   constructor(private monitoreoGeneralService: MonitoreoGeneralService,
               private aRoute: ActivatedRoute,
@@ -37,6 +38,21 @@ export class MonitoreosComponent implements OnInit {
     error => {
       console.log(error);
     });
+  }
+
+  getIdEliminar(id: String){
+    this.idEliminar = id;
+  }
+
+  eliminarMonitoreo(){
+    this.monitoreoGeneralService.delete(this.idEliminar)
+      .subscribe(data => {
+        console.log(data);
+        location.reload();
+      },
+      error => {
+        console.log(error);
+      });
   }
 
 }

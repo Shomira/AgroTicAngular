@@ -16,6 +16,7 @@ export class PlantaComponent implements OnInit {
   plantas: any[] = [];
   cultivos: any[] = [];
   variedades: any[] = [];
+  idEliminar: String = "";
 
   constructor(private fb: FormBuilder, 
               private plantaService: PlantaService,
@@ -94,6 +95,21 @@ export class PlantaComponent implements OnInit {
     error => {
       console.log(error);
     });
+  }
+
+  getIdEliminar(id: String){
+    this.idEliminar = id;
+  }
+
+  eliminarPlanta(){
+    this.plantaService.delete(this.idEliminar)
+      .subscribe(data => {
+        console.log(data);
+        location.reload();
+      },
+      error => {
+        console.log(error);
+      });
   }
 
 }

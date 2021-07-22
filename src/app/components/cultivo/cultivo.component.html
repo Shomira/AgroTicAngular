@@ -35,9 +35,8 @@
 
                         <td> <a  [routerLink]="['/ver-cultivo/', cultivo.id]"><i class="fas fa-eye fa-lg text-info"></i></a></td>
                         <td><i class="fas fa-edit fa-lg text-info"></i></td>
-                        <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
+                        <td><i class="fas fa-trash-alt fa-lg text-danger" data-toggle="modal" data-target="#modalEliminarCultivo" (click)="getIdEliminar(cultivo.id)"></i></td>
                     </tr>
-              
                 </tbody>
             </table>
         </section>
@@ -68,7 +67,7 @@
                     <tr *ngFor="let variedad of variedades " >
                         <td>{{variedad.nombre}}</td>
                         <td><i class="fas fa-edit fa-lg text-info"></i></td>
-                        <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
+                        <td><i class="fas fa-trash-alt fa-lg text-danger" data-toggle="modal" data-target="#modalEliminarVariedad" (click)="getIdEliminar(variedad.id)"></i></td>
                     </tr>
                 </tbody>
             </table>
@@ -125,7 +124,7 @@
                     <tr *ngFor="let cultivoPE of cultivosPlagasEnfermedades " >
                         <td>{{cultivoPE.plagaEnfermedad.nombre}}</td>
                         <td><i class="fas fa-edit fa-lg text-info"></i></td>
-                        <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
+                        <td><i class="fas fa-trash-alt fa-lg text-danger" data-toggle="modal" data-target="#modalEliminarPlagaEnfermedad" (click)="getIdEliminar(cultivoPE.id)"></i></td>
                     </tr>
                 </tbody>
             </table>
@@ -147,9 +146,8 @@
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Plaga y Enfermedad</label>
                         <select name="plaga_enfermedad" id="plaga_enfermedad" class="form-control">
-                            <option value="" disable >Elegir Plaga y enfermedad</option>
-                            <option value="">Plaga 1</option>
-                            <option value="">Plaga 2</option>
+                            <option value="" disable >--Plaga Enfermedad--</option>
+                            <option *ngFor="let plagaEnfermedad of plagasEnfermedades" value={{plagaEnfermedad.id}} >{{plagaEnfermedad.nombre}}</option>
                         </select>
                     </div>
                     <div class="mb-3">
@@ -158,6 +156,63 @@
                     </div>
                 </div>
             </form>
+        </div>
+    </div>
+    <!-- Modal Eliminar Variedad-->
+    <div class="modal fade" id="modalEliminarVariedad" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <h5 class="modal-title" id="exampleModalLabel">¿Está seguro de eliminar?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--Nos ayuda a que el usuario llene todos los campos-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger" (click)="eliminarVariedad()">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Eliminar Plaga y enfermedad-->
+    <div class="modal fade" id="modalEliminarPlagaEnfermedad" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <h5 class="modal-title" id="exampleModalLabel">¿Está seguro de eliminar?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--Nos ayuda a que el usuario llene todos los campos-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger" (click)="eliminarPlagaEnfermedad()">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Eliminar para Cultivo-->
+    <div class="modal fade" id="modalEliminarCultivo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <h5 class="modal-title" id="exampleModalLabel">¿Está seguro de eliminar?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--Nos ayuda a que el usuario llene todos los campos-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger" (click)="eliminarCultivo()">Eliminar</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

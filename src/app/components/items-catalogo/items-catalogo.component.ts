@@ -16,6 +16,7 @@ export class ItemsCatalogoComponent implements OnInit {
   itemsCatalogos: any [] = [];
   id: string | null;
   catalogo: any;
+  idEliminar: String = "";
 
   constructor(private fb: FormBuilder, 
               private itemsCatalogoService: ItemsCatalogoService,
@@ -81,5 +82,19 @@ export class ItemsCatalogoComponent implements OnInit {
     }
   }
 
+  getIdEliminar(id: String){
+    this.idEliminar = id;
+  }
+
+  eliminarItemsCatalogos(){
+    this.itemsCatalogoService.delete(this.idEliminar)
+      .subscribe(data => {
+        console.log(data);
+        location.reload();
+      },
+      error => {
+        console.log(error);
+      });
+  }
 
 }
