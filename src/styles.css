@@ -30,13 +30,9 @@
 .principalV .row .rounded{
     align-content: center;
 }
-/*
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-*/
+
+
 /*Estuilos para el boton regresar*/
 .aBtnRegresar{
   text-decoration: none;
@@ -67,4 +63,9 @@ a.aBtnRegresar {
 }
 a.aBtnRegresar:hover{
   color: white;
+}
+
+/**/
+i{
+  cursor: pointer;
 }

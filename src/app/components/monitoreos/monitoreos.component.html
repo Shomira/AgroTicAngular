@@ -8,17 +8,19 @@
             </div>
         </div>
     </div>
-    <section class="card">
+    <section class="card tableMonitoreos">
         <section class="card-body">
             <span class="h3">Listado de Monitoreos Generales</span>
-            <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modalCodigoPlanta">Agregar Monitoreo general</button>
+            <button class="btn btn-primary float-right" routerLink="/monitoreo-general">Agregar Monitoreo general</button>
             <table class="table table-striped mt-4">
                 <thead>
                     <tr>
                         <th>Fecha Monitoreo</th>
                         <th>Area Sembrada</th>
-                        <th>Temperatura clima</th>
-                        <th>Monitoreos</th>
+                        <th>Temp. clima</th>
+                        <th>Monitoreo planta</th>
+                        <th>Fertilización</th>
+                        <th>Control Pl-En</th>
                         <th>Ver</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
@@ -29,9 +31,12 @@
                         <td>{{monitoreo.fechaMonitoreo}}</td>
                         <td>{{monitoreo.areaSembrada}}</td>
                         <td>{{monitoreo.temperaturaCelsius}}</td>
-                        <td><button class="btn btn-secondary" [routerLink]="['/monitoreo-planta/', monitoreo.id]"> Agregar Monitoreo</button></td>
+                        <!--[routerLink]="['/monitoreo-planta/', monitoreo.id]"-->
+                        <td><button class="btn btn-info" data-toggle="modal" data-target="#modalCodigoPlanta" >Agregar</button></td>
+                        <td><button class="btn btn-success" data-toggle="modal" data-target="#modalFertilizacion" > Agregar</button></td>
+                        <td><button class="btn btn-dark" data-toggle="modal" data-target="#modalControlPlagasEnfermedades" > Agregar</button></td>
                         <td> <a href="" [routerLink]="['/ver-monitoreo/', monitoreo.id]"><i class="fas fa-eye fa-lg text-info"></i></a></td>
-                        <td><i class="fas fa-edit fa-lg text-info"></i></td>
+                        <td><i class="fas fa-edit fa-lg text-dark"></i></td>
                         <td><i class="fas fa-trash-alt fa-lg text-danger" data-toggle="modal" data-target="#modalEliminar" (click)="getIdEliminar(monitoreo.id)"></i></td>
                     </tr>
                 </tbody>
@@ -44,7 +49,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Código de Planta</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -57,7 +62,7 @@
                     <div class="modal-footer">
                         <p>{{planta.value}} </p>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" (click)="elegirPlanta(planta.value)" data-dismiss="modal"  class="btn btn-primary" >Aceptar</button>
+                        <button type="submit" (click)="elegirPlanta(planta.value)" [routerLink]="['/monitoreo-planta/']" data-dismiss="modal"  class="btn btn-primary" >Aceptar</button>
                     </div>
                 </form>
             </div>
@@ -79,6 +84,34 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-danger" (click)="eliminarMonitoreo()">Eliminar</button>
                 </div>
+            </div>
+        </div>
+    </div>
+       <!--MODAL FERTILIZACION-->
+       <div class="modal fade" id="modalFertilizacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Fertilización</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                
+                <form>
+                    <div class="modal-body">
+                        <label for=""> Cantidad Fertilizante</label>
+                        <input formControlName="cantFertilizante" class="form-control " type="number">
+                        <label for=""> Fecha aplicación fertilizante</label>
+                        <input formControlName="fechaFertilizacion" class="form-control " type="date">
+                    
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Aceptar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

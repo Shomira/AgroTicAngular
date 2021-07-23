@@ -21,7 +21,7 @@ export class MonitoreosComponent implements OnInit {
   }
 
   elegirPlanta(value:String){
-    this.router.navigate(['/monitoreo-general', value]);
+    this.router.navigate(['/monitoreo-planta', value]);
   }
 
   readMonitoreos(): void {

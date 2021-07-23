@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'registro-cultivo', component: RegistrarCultivoComponent },
   { path: 'catalogos', component: CatalogoComponent},
   { path: 'items-catalogo/:id', component: ItemsCatalogoComponent},
-  { path: 'monitoreo-general/:id', component: MonitoreoGeneralComponent},
+  { path: 'monitoreo-general', component: MonitoreoGeneralComponent},
   { path: 'monitoreo-planta/:id', component: MonitoreoPlantaComponent},
   { path: 'monitoreos', component: MonitoreosComponent},
   { path: 'planta', component: PlantaComponent},

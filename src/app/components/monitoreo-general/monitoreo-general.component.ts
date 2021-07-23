@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MonitoreoGeneralService } from 'src/app/services/monitoreo-general.service';
-import { PlantaService } from 'src/app/services/planta.service';
 
 @Component({
   selector: 'app-monitoreo-general',
@@ -13,14 +12,10 @@ export class MonitoreoGeneralComponent implements OnInit {
 
   crearMonitoreoGeneral: FormGroup;
   submitted = false;
-  id: string | null;
-  planta: any;
 
   constructor(private fb: FormBuilder, 
-              private monitoreoGeneralService: MonitoreoGeneralService, 
-              private plantaService: PlantaService,
-              private router: Router,
-              private aRoute: ActivatedRoute) {
+              private monitoreoGeneralService: MonitoreoGeneralService,
+              private router: Router) {
 
     this.crearMonitoreoGeneral = this.fb.group({
       ubicacion: ['', Validators.required],
@@ -41,15 +36,11 @@ export class MonitoreoGeneralComponent implements OnInit {
       observaciones:  ['']
     });
 
-    this.id = this.aRoute.snapshot.paramMap.get('id');
+  
   }
 
   ngOnInit(): void {
-    if (this.id != null){
-      this.plantaService.read(this.id).subscribe(data => {
-          this.planta = data;
-      });
-    }
+  
   }
 
   agregarMonitoreoGneral(){
@@ -75,7 +66,7 @@ export class MonitoreoGeneralComponent implements OnInit {
       humedadRelativaPorcent: this.crearMonitoreoGeneral.value.humedadRelativaPorcent,
       riegoLluviaMlPlanta: this.crearMonitoreoGeneral.value.riegoLluviaMlPlanta,
       observaciones: this.crearMonitoreoGeneral.value.observaciones,
-      planta: this.planta,
+      
       // fecha del sistema
       //fechaCreacion: new Date(),
       //fechaActualizacion : new Date()
